@@ -263,10 +263,10 @@
             <td id="Hsub1">1.1 ค่าเช่าหรือค่าประเมินค่าเช่าบ้านและที่ดิน (เฉพาะที่ใช้อยู่อาศัย)
                 <div class="YorM">
                 	<label for="checkboxA" style="padding-right: 20px;">
-                		<input type="radio" id="EG01C" name="EG01C" value="1"> รายปี
+                		<input type="radio" id="EG01C1" name="EG01C" value="1"> รายปี
                     </label>
                 	<label for="checkboxB">
-                		<input type="radio" id="EG01C" name="EG01C" value="2" checked> รายเดือน
+                		<input type="radio" id="EG01C2" name="EG01C" value="2" checked> รายเดือน
                     </label>
                 </div>
                 
@@ -280,7 +280,6 @@
                 	   class="gray"
                 	   id="EG01AY"
                        placeholder="EG01AY"
-                       oninput="CalMonthly('EG01AY', 'EG01A');"
                 >
             </td>
             
@@ -289,7 +288,6 @@
                 	   class="gray"
                        id="EG01BCY"
                        placeholder="EG01BCY"
-                       oninput="CalMonthly('EG01BCY', 'EG01BC');"
                 >
             </td>
             
@@ -310,42 +308,41 @@
             </td>
         </tr>
 
-        <script>
+<script>
+    var radioButtons = document.querySelectorAll('.YorM input[type="radio"]');
 
-            var radioButtons = document.querySelectorAll('.YorM input[type="radio"]');
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('change', function() {
+            var EG01AY = document.getElementById('EG01AY');
+            var EG01BCY = document.getElementById('EG01BCY');
+            var EG01A = document.getElementById('EG01A');
+            var EG01BC = document.getElementById('EG01BC');
+            var EG01C1 = document.getElementById('EG01C1');
 
-            radioButtons.forEach(function(radioButton) {
-                radioButton.addEventListener('change', function() {
-
-                    if (this.value == 1) {
-                        EG01AY.classList.remove('gray');
-                        EG01BCY.classList.remove('gray');
-                        EG01AY.classList.add('price');
-                        EG01BCY.classList.add('price');
-                        EG01A.classList.remove('price');
-                        EG01BC.classList.remove('price');
-                        EG01A.classList.add('gray');
-                        EG01BC.classList.add('gray');
-                        EG01A.value = '';
-                        EG01BC.value = '';
-                    }
-
-                    else if (this.value == 2) {
-                        EG01AY.classList.add('gray');
-                        EG01BCY.classList.add('gray');
-                        EG01A.classList.remove('gray');
-                        EG01BC.classList.remove('gray');
-                        EG01A.classList.add('price');
-                        EG01BC.classList.add('price');
-                        EG01AY.value = '';
-                        EG01BCY.value = '';
-                    }
-                });
-            });
-
-		</script>
-
-
+            if (EG01C1.checked) {
+                EG01AY.classList.remove('gray');
+                EG01BCY.classList.remove('gray');
+                EG01AY.classList.add('price');
+                EG01BCY.classList.add('price');
+                EG01A.classList.remove('price');
+                EG01BC.classList.remove('price');
+                EG01A.classList.add('gray');
+                EG01BC.classList.add('gray');
+                EG01A.value = '';
+                EG01BC.value = '';
+            } else {
+                EG01AY.classList.add('gray');
+                EG01BCY.classList.add('gray');
+                EG01A.classList.remove('gray');
+                EG01BC.classList.remove('gray');
+                EG01A.classList.add('price');
+                EG01BC.classList.add('price');
+                EG01AY.value = '';
+                EG01BCY.value = '';
+            }
+        });
+    });
+</script>
         
         <script>
         
@@ -723,27 +720,38 @@ function CalMonthly(yearlyId, monthlyId) {
 
 function allMonthly() {
 
-    if (document.getElementById('EG01Y').checked) {
+	if (EG01C1.checked) {
     	CalMonthly('EG01AY', 'EG01A');
     	CalMonthly('EG01BCY', 'EG01BC');
-    }
-	
-    CalMonthly('EG06AY', 'EG06A');
-    CalMonthly('EG07AY', 'EG07A');
-    CalMonthly('EG08AY', 'EG08A');
-    CalMonthly('EG09AY', 'EG09A');
-    CalMonthly('EG10AY', 'EG10A');
-    CalMonthly('EG11AY', 'EG11A');
-    CalMonthly('EG12AY', 'EG12A');
-    
-    CalMonthly('EG06BCY', 'EG06BC');
-    CalMonthly('EG07BCY', 'EG07BC');
-    CalMonthly('EG08BCY', 'EG08BC');
-    CalMonthly('EG09BCY', 'EG09BC');
-    CalMonthly('EG10BCY', 'EG10BC');
-    CalMonthly('EG11BCY', 'EG11BC');
-    CalMonthly('EG12BCY', 'EG12BC');
+	}
+
+	CalMonthly('EG06AY', 'EG06A');
+	CalMonthly('EG07AY', 'EG07A');
+	CalMonthly('EG08AY', 'EG08A');
+	CalMonthly('EG09AY', 'EG09A');
+	CalMonthly('EG10AY', 'EG10A');
+	CalMonthly('EG11AY', 'EG11A');
+	CalMonthly('EG12AY', 'EG12A');
+        
+	CalMonthly('EG06BCY', 'EG06BC');
+	CalMonthly('EG07BCY', 'EG07BC');
+	CalMonthly('EG08BCY', 'EG08BC');
+	CalMonthly('EG09BCY', 'EG09BC');
+	CalMonthly('EG10BCY', 'EG10BC');
+	CalMonthly('EG11BCY', 'EG11BC');
+	CalMonthly('EG12BCY', 'EG12BC');
 }
+
+    var radioButtons = document.querySelectorAll('.YorM input[type="radio"]');
+
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('change', function() {
+            if (this.value == 1) {
+                CalMonthly('EG01AY', 'EG01A');
+                CalMonthly('EG01BCY', 'EG01BC');
+            }
+        });
+    });
 
 <!-------------------------------------------------------------------------->
 
