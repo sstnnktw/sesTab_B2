@@ -1,0 +1,1349 @@
+<SES pre Tablet>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SES Chapter 4 - part 3</title>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        font-size: 16px;
+        display: flex;
+    }
+    .ses {
+        background-color: #b786db;
+        padding: 25px;
+        text-align:center;
+        font-size: 24px;
+    }
+    .chapter {
+        background-color: #edecf3;
+        padding: 20px;
+        font-size: 20px;
+        text-align:center;
+    }
+    .headABC {  /* ก., ข., ... */
+        background-color: #d2b3e8;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .head1 {  /* ข้อ 1., 2., 3., ... */
+        background-color: #DEC8EE;
+        padding: 15px;
+        padding-left: 30px;
+        font-size: 16px;
+    }
+    
+    /*--------------------------------*/
+
+    select {
+        font-size: 15px;
+        height: 32px;
+        width: 120px;
+    }
+    
+    /*--------------------------------*/
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    table th, table td {
+        border: 1px solid #f2f2f2;
+        padding: 10px;
+        text-align: left;
+    }
+    table th {
+    	font-weight: normal;
+        background-color: #DEC8EE;
+        text-align: center;
+    }
+    thead {
+        position: sticky;
+        top: 0;
+        background: #eee;
+    }
+    
+    /*--------------- ITEM ---------------*/
+    
+   #head1 { /* ข้อ 1., 2., 3., ... */
+        background-color: #E9DAF4;
+        padding: 15px ;
+    }
+   #head2 { /* ข้อ 2.1, 2.2, 2.3, ... */
+        padding: 15px 35px;
+        background-color: #F7EEFC;
+    }
+   #year {
+        background-color: #fff;
+    }
+   #gray {
+        background-color: #f8f6fa;
+    }
+   #Hsub1 {
+        padding-left: 35px;
+    }
+   #Hsub2 {
+        padding-left: 60px;
+    }
+   #HsubG {
+        padding-left: 35px;
+        background-color: #f8f6fa;
+    }
+   #total, #total3 {
+    text-align: right;
+    background-color: #F7EEFC;
+   }
+
+   #total2, #total4 {
+    text-align: center;
+    background-color: #F7EEFC;
+   }
+
+   #total3 {
+    padding: 20px;
+   }
+
+   #total4 {
+    padding: 20px;
+   }
+
+   #nn {
+        padding-left: 30px;
+    }
+    
+    /*--------------- INPUT ---------------*/
+    
+    input {
+        height: 32px;
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        text-align: right;
+        display: block;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    input.price, input.year, input.gray, input.total {
+        width: 100px;
+    }
+    input.year {
+    	background-color: #F7EEFC;
+    }
+    input.gray {
+    	background-color: #EEEEEE;
+        pointer-events: none;
+    }
+    input.T { /* อื่น ๆ ระบุ */
+        width: 200px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+    input.Q {
+        width: 45px;
+        float: left;
+        display: inline-block;;
+    }
+    input.P {
+        width: 45px;
+    }
+    input.QT { /* ระบุหน่วย */
+        width: 120px;
+        float: left;
+        margin-left: 10px;
+        display: inline-block;
+    }
+    input.total {
+        width: 100px;
+    	background-color: #EBD5F7;
+        display: inline-block;
+        pointer-events: none;
+    }
+    input.total2 {
+        width: 100px;
+    	background-color: #DEC8EE;
+        display: inline-block;
+        pointer-events: none;
+    }
+    tfoot td {
+        font-weight: bold;
+    }
+    
+    /*--------------------------------*/
+
+    .nn {
+        background-color: #FFF9E7;
+        font-size: 15px;
+        padding: 10px;
+        padding-left: 20px;
+    }  
+    .nn2 {
+        background-color: #FFF9E7;
+        font-size: 15px;
+        padding: 10px;
+        padding-left: 60px;
+    }
+    .remark, .remarkR, .remarkL {
+        color: #FF0000;
+        font-size: 15px;
+    }
+    .remarkL {
+        padding-left: 15px;
+    }
+    .remarkR {
+        padding-right: 15px;
+    }
+    .note {    
+        font-size: 18px;
+        background-color: #E2EFDA;
+        padding: 20px;
+        padding-left: 20px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .notebox {
+        height: 200px;    
+        font-size: 16px;
+        color: #FF0000;
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #000;
+        margin-top: 10px;
+        white-space: pre-line;
+        overflow-y: auto;
+    }
+    #outer{
+        width:100%;
+        text-align: center;
+    }
+    .inner{
+        display: inline-block;
+    }
+    
+    /*--------------------------------*/
+    
+    input[type="number"]::-webkit-outer-spin-button, 
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    input[type="number"] {
+    -moz-appearance: textfield;
+    }
+    
+    #EF04_1BC::placeholder {
+    color: red;
+    }
+</style>
+</head>
+<body>
+
+<!----------------------------------------------- HEADDING ----------------------------------------------->
+
+<div class="ses"> <b>การสำรวจภาวะเศรษฐกิจและสังคมของครัวเรือน</b> </div>
+
+<div class="chapter">
+    <b>ตอนที่ 4 ค่าใช้จ่ายอาหาร เครื่องดื่ม และยาสูบ</b><br>
+    <br><span class="remark">- ข้อไหนไม่มีค่าใช้จ่ายสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u><br>
+    	- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปร<u>เพื่อความเข้าใจเท่านั้น</u> หน้าโปรแกรมจริงให้<u>เอาออก</u></span>
+</div>
+
+<div class="nn">
+    ให้บันทึก <b>"จำนวนเงิน"</b> (ถ้าซื้อ/จ่าย) หรือ <b>"มูลค่า"</b> (ถ้าไม่ได้ซื้อ/จ่าย เบิกได้) ของค่าใช้จ่ายแต่ละรายการตาม<b>คาบเวลาที่กำหนดให้</b>
+</div>
+
+<div class="headABC"> <b>ข. อาหารทุกชนิดที่ครัวเรือนบริโภคจริงในรอบสัปดาห์ที่แล้ว</b></div>
+
+<table>
+  <thead>
+  
+  	<tr>
+  		<th rowspan="2" style="min-width: 900px;"><b>รายการค่าใช้จ่าย</b></th>
+  		<th colspan="2"><b>การบริโภคในรอบสัปดาห์ที่แล้ว</b></th>
+  	</tr>
+    
+  	<tr>
+  		<th style="min-width: 120px;">
+  			<b>ซื้อ/จ่าย</b><br><br><br>
+  			<span style="font-size: 14px;">(จำนวนเงิน)</span>
+  		</th>
+  		<th style="min-width: 120px;">
+  			<b>ไม่ได้ซื้อ/จ่าย<br>เบิกได้ หรือ<br>ผลิตเอง</b><br>
+  			<span style="font-size: 14px;">(มูลค่า)</span>
+  		</th>
+  	</tr>
+  
+  </thead>
+  
+<!------------------------------------------------------------------------------------->
+
+    <tbody id="table">
+
+        <tr>
+            <td id="head1"><b>1. ข้าว แป้ง และอาหารที่ทำจากแป้ง</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 3;
+                var itemNames = [
+                    "เส้นก๋วยเตี๋ยว บะหมี่ ขนมจีน ขนมปัง/เค้ก ขนมที่ทำจากแป้ง",
+                    "* ข้าวเจ้า ข้าวเหนียว ข้าวโอ๊ต แป้งข้าวเจ้า แป้งทอดกรอบ แป้งสาลี แป้งมันสำปะหลัง และแป้งอื่น ๆ",
+                    "* เส้นหมี่ วุ้นเส้น เต้าหู้ มักกะโรนี/สปาเก็ตตี้ สาคู ฯลฯ"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF01_" + (i + 1) + "A";
+                    var ValueB = "EFF01_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number" =
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF01A" placeholder="EDF01A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF01BC" placeholder="EDF01BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF01A" placeholder="EF01A"></td>
+            <td id="total2"><input type="number" class="total" id="EF01BC" placeholder="EF01BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>2. เนื้อสัตว์ และสัตว์ปีกทุกชนิด</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "เนื้อสัตว์ทุกชนิด (เช่น หมู ไก่ สัตว์ป่า ฯลฯ <b>รวม</b> อวัยวะทุกส่วน) รวม เนื้อที่ปรุงสำเร็จ (เช่น หมูแดง ฯลฯ)",
+                    "* เนื้อสัตว์แปรรูป (เช่น หมู/เนื้อเค็มหรือตากแห้ง หมูหยอง กุนเชียง ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF02_" + (i + 1) + "A";
+                    var ValueB = "EFF02_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF02A" placeholder="EDF02A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF02BC" placeholder="EDF02BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF02A" placeholder="EF02A"></td>
+            <td id="total2"><input type="number" class="total" id="EF02BC" placeholder="EF02BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>3. ปลาและสัตว์น้ำอื่น ๆ</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "สัตว์น้ำทุกชนิด (เช่น ปลา กุ้ง ปลาหมึก ฯลฯ) <b>รวม</b> สัตว์น้ำปรุงสำเร็จ (เช่น ปลานึ่ง เกี๊ยวกุ้ง ฯลฯ)",
+                    "* สัตว์น้ำแปรรูป (เช่น ปลาแห้ง/ปลาเค็ม กุ้ง/ปลาหมึกแห้ง ปลาร้า ปูดอง ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF03_" + (i + 1) + "A";
+                    var ValueB = "EFF03_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF03A" placeholder="EDF03A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF03BC" placeholder="EDF03BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF03A" placeholder="EF03A"></td>
+            <td id="total2"><input type="number" class="total" id="EF03BC" placeholder="EF03BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>4. อาหารประเภทนม เนย เนยแข็งและไข่</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "นมสด นมถั่วเหลือง และเครื่องดื่มที่ทำจากนม (เช่น นมเปรี้ยว โยเกิร์ต ยาคูลท์ ฯลฯ) ไข่ (สด/แปรรูป)",
+                    "* นมยูเอชที นมข้นหวาน นมผง ครีมเทียม เนยแข็ง เนยเทียม ฯลฯ"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF04_" + (i + 1) + "A";
+                    var ValueB = "EFF04_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+    	<tr>
+            <td id="Hsub2">* นมโรงเรียนทุกประเภท (ที่ได้รับอุดหนุนฟรีจากรัฐ)</td>
+            <td></td>
+            <td><input type="number" class="price" id="EF04_1BC" placeholder="EF04_1BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF04A" placeholder="EDF04A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF04BC" placeholder="EDF04BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF04A" placeholder="EF04A"></td>
+            <td id="total2"><input type="number" class="total" id="EF04BC" placeholder="EF04BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>5. น้ำมัน และไขมัน</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub2">* น้ำมันหมู น้ำมันเนย เนยสด กะทิ ไขมันอื่น ๆ และน้ำมันพืชทุกชนิด</td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF05A"
+                       placeholder="EFF05A"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF05BC"
+                       placeholder="EFF05BC"
+                >
+            </td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF05A" placeholder="EDF05A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF05BC" placeholder="EDF05BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF05A" placeholder="EF05A"></td>
+            <td id="total2"><input type="number" class="total" id="EF05BC" placeholder="EF05BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>6. ผลไม้ และถั่วเปลือกแข็ง</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "ผลไม้สดทุกชนิด",
+                    "* ผลไม้แช่อิ่ม/ดอง/กวน/ตากแห้ง ผลไม้กระป๋อง ถั่วลิสง ถั่วเขียว ถั่วเหลือง ถั่วอื่น ๆ"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF06_" + (i + 1) + "A";
+                    var ValueB = "EFF06_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF06A" placeholder="EDF06A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF06BC" placeholder="EDF06BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF06A" placeholder="EF06A"></td>
+            <td id="total2"><input type="number" class="total" id="EF06BC" placeholder="EF06BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>7. ผัก</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "ผักสดทุกชนิด",
+                    "* ผักตากแห้ง ดอง ทำเค็ม (เช่น หอมแดง กระเทียมแห้ง พริกแห้ง ผักกาดดอง เต้าเจี้ยว เห็ดแห้ง ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF07_" + (i + 1) + "A";
+                    var ValueB = "EFF07_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF07A" placeholder="EDF07A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF07BC" placeholder="EDF07BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF07A" placeholder="EF07A"></td>
+            <td id="total2"><input type="number" class="total" id="EF07BC" placeholder="EF07BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>8. น้ำตาล และขนมหวาน</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "ไอศกรีม เชอร์เบต เยลลี่ และขนมหวานประเภทต่าง ๆ ลูกกวาด/ลูกอม ช็อกโกแลตแท่ง",
+                    "* น้ำตาลทุกชนิด (เช่น น้ำตาลทรายน้ำตาลปี๊บ/ปึกฯลฯ) แยมน้ำผึ้ง ฯลฯ"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF08_" + (i + 1) + "A";
+                    var ValueB = "EFF08_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF08A" placeholder="EDF08A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF08BC" placeholder="EDF08BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF08A" placeholder="EF08A"></td>
+            <td id="total2"><input type="number" class="total" id="EF08BC" placeholder="EF08BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>9. เครื่องปรุงรส และเครื่องเทศ</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub2">* เกลือ น้ำปลา น้ำส้มสายชู ซีอิ๊วและซอสชนิดต่าง ๆพริกไทย และเครื่องเทศต่าง ๆ ฯลฯ</td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF09A"
+                       placeholder="EFF09A"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF09BC"
+                       placeholder="EFF09BC"
+                >
+            </td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF09A" placeholder="EDF09A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF09BC" placeholder="EDF09BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF09A" placeholder="EF09A"></td>
+            <td id="total2"><input type="number" class="total" id="EF09BC" placeholder="EF09BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>10. เครื่องดื่มที่ไม่มีแอลกอฮอล์ (บริโภคที่บ้าน)</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="HsubG"><b>เครื่องดื่มกึ่งสำเร็จรูป</b></td>
+            <td id="gray"></td>
+            <td id="gray"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub2">* ผลิตภัณฑ์กึ่งสำเร็จรูป (เช่น กาแฟเม็ด/ผง ใบชา ชาผง ไมโล โอวัลติน โกโก้/ช็อคโกแลตผง ฯลฯ)</td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF10A"
+                       placeholder="EFF10A"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF10BC"
+                       placeholder="EFF10BC"
+                >
+            </td>
+        </tr>
+        
+        <tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF10A" placeholder="EDF10A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF10BC" placeholder="EDF10BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF10A" placeholder="EF10A"></td>
+            <td id="total2"><input type="number" class="total" id="EF10BC" placeholder="EF10BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="HsubG"><b>เครื่องดื่มสำเร็จรูป</b></td>
+            <td id="gray"></td>
+            <td id="gray"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub2">* ผลิตภัณฑ์สำเร็จรูป (เช่น น้ำอัดลมและน้ำหวานต่าง ๆ น้ำดื่ม น้ำแร่ น้ำผัก/ผลไม้ โซดา น้ำแข็ง กาแฟ/ชาบรรจุภาชนะพร้อมดื่ม <br>เครื่องดื่มชูกำลัง/บำรุงร่างกาย ฯลฯ)</td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF11A"
+                       placeholder="EFF11A"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF11BC"
+                       placeholder="EFF11BC"
+                >
+            </td>
+        </tr><tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF11A" placeholder="EDF11A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF11BC" placeholder="EDF11BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF11A" placeholder="EF11A"></td>
+            <td id="total2"><input type="number" class="total" id="EF11BC" placeholder="EF11BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>11. อาหารสำเร็จรูปที่ซื้อมา (บริโภคที่บ้าน)</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "ข้าวแกง/กับข้าวสำเร็จรูป (เช่น ข้าวผัด ก๋วยเตี๋ยว ฯลฯ) อาหารปิ่นโต และอาหารว่างอื่น ๆ",
+                    "* ผลิตภัณฑ์อาหารสำเร็จรูป (เช่น บะหมี่กึ่งสำเร็จรูป อาหารกระป๋องสำเร็จรูป ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EFF12_" + (i + 1) + "A";
+                    var ValueB = "EFF12_" + (i + 1) + "BC";
+                    row.innerHTML = `
+                <td id="Hsub2">${itemNames[i]}</td>
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueA}"
+                           placeholder="${ValueA}"
+                    >
+                </td>
+                
+                <td>
+                	<input type="number"
+                    	   class="price"
+                           id="${ValueB}"
+                           placeholder="${ValueB}"
+                    >
+                </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+        <tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>
+            <td id="gray"><input type="number" class="gray" id="EDF12A" placeholder="EDF12A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF12BC" placeholder="EDF12BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF12A" placeholder="EF12A"></td>
+            <td id="total2"><input type="number" class="total" id="EF12BC" placeholder="EF12BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>12. อาหารและเครื่องดื่มที่ไม่มีแอลกอฮอล์ (บริโภคนอกบ้าน)</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่บริโภคในรอบสัปดาห์ที่แล้ว :</b></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub2">ค่าอาหารเช้า/กลางวัน/เย็น อาหารรับประทานที่ทำงาน อาหารว่างอื่น ๆ และค่าอาหารกลางวันสำหรับเด็กนักเรียน/นักศึกษา<br>ที่ไปเรียนหนังสือ</td>            
+            <td><input type="number" class="price" id="EF13A" placeholder="EF13A"></td>
+            <td><input type="number" class="price" id="EF13BC" placeholder="EF13BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>13. เครื่องดื่มที่มีแอลกอฮอล์ (เช่น เบียร์ ไวน์ สุรา ฯลฯ)</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="HsubG"><b>บริโภคที่บ้าน</b></td>
+            <td id="gray"></td>
+            <td id="gray"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1">ที่บริโภคในรอบสัปดาห์ที่แล้ว</td>            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF14A"
+                       placeholder="EFF14A"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF14BC"
+                       placeholder="EFF14BC"
+                >
+            </td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>         
+            <td id="gray"><input type="number" class="gray" id="EDF14A" placeholder="EDF14A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF14BC" placeholder="EDF14BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF14A" placeholder="EF14A"></td>
+            <td id="total2"><input type="number" class="total" id="EF14BC" placeholder="EF14BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="HsubG"><b>บริโภคนอกบ้าน</b></td>
+            <td id="gray"></td>
+            <td id="gray"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1">ที่บริโภคในรอบสัปดาห์ที่แล้ว</td>            
+            <td><input type="number" class="price" id="EF15A" placeholder="EF15A"></td>
+            <td><input type="number" class="price" id="EF15BC" placeholder="EF15BC"></td>
+        </tr>
+  
+<!------------------------------------------------------------------------------------->
+
+        <tr>
+            <td id="head1"><b>14. ยาสูบ หมาก ยานัตถุ์ และผลิตภัณฑ์ประเภทเดียวกัน</b></td>
+            <td id="head1"></td>
+            <td id="head1"></td>
+        </tr>
+        
+    	<tr>
+            <td id="HsubG"><b>บุหรี่ บุหรี่ไฟฟ้า ซิการ์ ยาเส้น ยาตั้ง ฯลฯ</b></td>
+            <td id="gray"></td>
+            <td id="gray"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1">ที่บริโภคในรอบสัปดาห์ที่แล้ว</td>            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF16A"
+                       placeholder="EFF16A"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF16BC"
+                       placeholder="EFF16BC"
+                >
+            </td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>     
+            <td id="gray"><input type="number" class="gray" id="EDF16A" placeholder="EDF16A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF16BC" placeholder="EDF16BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF16A" placeholder="EF16A"></td>
+            <td id="total2"><input type="number" class="total" id="EF16BC" placeholder="EF16BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="HsubG"><b>ยานัตถุ์ หมาก พลู ยาฉุน ยาจืด</b></td>
+            <td id="gray"></td>
+            <td id="gray"></td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1">ที่บริโภคในรอบสัปดาห์ที่แล้ว</td>            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF17A"
+                       placeholder="EFF17A"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EFF17BC"
+                       placeholder="EFF17BC"
+                >
+            </td>
+        </tr>
+        
+    	<tr>
+            <td id="Hsub1"><b>ที่เก็บไว้บริโภคได้นานเกิน 1 สัปดาห์ (ตอนที่ 4.1 - 4.2)</b><span class="remarkL">(ดึงค่ามาจากตอนที่ 4.1 - 4.2 และ disable box ไว้)</span></td>         
+            <td id="gray"><input type="number" class="gray" id="EDF17A" placeholder="EDF17A"></td>
+            <td id="gray"><input type="number" class="gray" id="EDF17BC" placeholder="EDF17BC"></td>
+        </tr>
+        
+    	<tr>
+            <td id="total"><span class="remarkR">(โปรแกรมคำนวณให้)</span><b>รวม</b></td>
+            <td id="total2"><input type="number" class="total" id="EF17A" placeholder="EF17A"></td>
+            <td id="total2"><input type="number" class="total" id="EF17BC" placeholder="EF17BC"></td>
+        </tr>
+        
+    	<tr><td></td></tr>
+  
+<!------------------------------------------------------------------------------------->
+        
+    </tbody>
+        
+<!--------------------------------------------------------> 
+        
+        <tfoot>
+            <tr>
+                <td id="total3">
+            <span class="remarkR">(โปรแกรมคำนวณให้)</span>รวมค่าใช้จ่ายอาหาร เครื่องดื่ม และยาสูบ เฉลี่ยต่อสัปดาห์</td>
+                <td id="total4">
+                	<input type="number"
+                    	   class="total"
+                           id="EF_A"
+                           placeholder="EF_A"
+                    >
+                </td>
+                
+                <td id="total4">
+                	<input type="number"
+                    	   class="total"
+                           id="EF_BC"
+                           placeholder="EF_BC"
+                    >
+                </td>
+            </tr>
+        </tfoot>
+    
+</table>
+
+
+<!-------------------------------------------- NOTE -------------------------------------------->
+
+<div class="note">
+  <b>NOTE :</b>
+  <span class="remark">(C4.3_NOTE)</span>
+  <div id="rec04_note" class="notebox" contenteditable="true">*** เพิ่มฟังก์ชันพิมพ์ด้วยเสียง ***</div>
+</div>
+
+<div id="outer">
+  <div class="inner"><button onclick="back()">Back</button></div>
+  <div class="inner"><button onclick="index()">Index</button></div>
+  <div class="inner"><button onclick="next()">Next</button></div>
+</div>
+
+<button onclick="resetLocalStorage()">Reset localStorage</button>
+
+<!----------------------------------------------------------------------------------------------------------->
+
+<script>
+
+<!--------------------------------------------------------------------->
+
+function back() {
+    saveToLocalStorage();
+    window.location.href = 'Chapter 4 - part 2.html';}
+
+<!--------------------------------------------------------------------->
+
+function index() {
+    saveToLocalStorage();
+    window.location.href = 'index.html';}
+
+<!--------------------------------------------------------------------->
+
+function next() {
+    saveToLocalStorage();
+    window.location.href = 'SES3.html';}
+
+<!-------------------------------------------------------------------------->
+
+function updateSum() {
+    var sum = 0;
+    for (var i = 0; i < arguments.length - 1; i++) {
+        var value = parseInt(document.getElementById(arguments[i]).value) || 0;
+        sum += value;
+    }
+    var outputId = arguments[arguments.length - 1];
+    if (sum != 0) {
+        document.getElementById(outputId).value = sum;
+    } else {
+        document.getElementById(outputId).value = "";
+    }
+}
+
+function allSum() {
+	updateSum('EFF01_1A', 'EFF01_2A', 'EFF01_3A', 'EDF01A', 'EF01A');
+    updateSum('EFF02_1A', 'EFF02_2A', 'EDF02A', 'EF02A');
+    updateSum('EFF03_1A', 'EFF03_2A', 'EDF03A', 'EF03A');
+    updateSum('EFF04_1A', 'EFF04_2A', 'EDF04A', 'EF04A');
+    updateSum('EFF05A', 'EDF05A', 'EF05A');
+    updateSum('EFF06_1A', 'EFF06_2A', 'EDF06A', 'EF06A');
+    updateSum('EFF07_1A', 'EFF07_2A', 'EDF07A', 'EF07A');
+    updateSum('EFF08_1A', 'EFF08_2A', 'EDF08A', 'EF08A');
+    updateSum('EFF09A', 'EDF09A', 'EF09A');
+    updateSum('EFF10A', 'EDF10A', 'EF10A');
+    updateSum('EFF11A', 'EDF11A', 'EF11A');
+    updateSum('EFF12_1A', 'EFF12_2A', 'EDF12A', 'EF12A');
+    updateSum('EFF14A', 'EDF14A', 'EF14A');
+    updateSum('EFF16A', 'EDF16A', 'EF16A');
+    updateSum('EFF17A', 'EDF17A', 'EF17A');
+    
+    updateSum('EFF01_1BC', 'EFF01_2BC', 'EFF01_3BC', 'EDF01BC', 'EF01BC');
+    updateSum('EFF02_1BC', 'EFF02_2BC', 'EDF02BC', 'EF02BC');
+    updateSum('EFF03_1BC', 'EFF03_2BC', 'EDF03BC', 'EF03BC');
+    updateSum('EFF04_1BC', 'EFF04_2BC', 'EF04_1BC','EDF04BC', 'EF04BC');
+    updateSum('EFF05BC', 'EDF05BC', 'EF05BC');
+    updateSum('EFF06_1BC', 'EFF06_2BC', 'EDF06BC', 'EF06BC');
+    updateSum('EFF07_1BC', 'EFF07_2BC', 'EDF07BC', 'EF07BC');
+    updateSum('EFF08_1BC', 'EFF08_2BC', 'EDF08BC', 'EF08BC');
+    updateSum('EFF09BC', 'EDF09BC', 'EF09BC');
+    updateSum('EFF10BC', 'EDF10BC', 'EF10BC');
+    updateSum('EFF11BC', 'EDF11BC', 'EF11BC');
+    updateSum('EFF12_1BC', 'EFF12_2BC', 'EDF12BC', 'EF12BC');
+    updateSum('EFF14BC', 'EDF14BC', 'EF14BC');
+    updateSum('EFF16BC', 'EDF16BC', 'EF16BC');
+    updateSum('EFF17BC', 'EDF17BC', 'EF17BC');
+    
+    updateSum('EF01A', 'EF02A', 'EF03A', 'EF04A', 'EF05A', 'EF06A', 'EF07A', 'EF08A', 'EF09A', 'EF10A',
+    		  'EF11A','EF12A','EF13A','EF14A','EF15A','EF16A','EF17A', 'EF_A');  
+    updateSum('EF01BC', 'EF02BC', 'EF03BC', 'EF04BC', 'EF05BC', 'EF06BC', 'EF07BC', 'EF08BC', 'EF09BC', 'EF10BC',
+    		  'EF11BC','EF12BC','EF13BC','EF14BC','EF15BC','EF16BC','EF17BC', 'EF_BC'); 
+}
+<!--------------------------------------------------------------------->
+
+    var elements = document.querySelectorAll("[id]");
+    var inputIds = Array.from(elements).map(function(element) {
+        return element.id;
+    });
+    
+<!--------------------------------------------------------------------->
+
+function saveToLocalStorage() {
+    inputIds.forEach(function(id) {
+        localStorage.setItem(id, document.getElementById(id).value);
+    });
+}
+
+<!--------------------------------------------------------------------->
+
+function resetLocalStorage() {
+    localStorage.clear();
+    alert("localStorage has been reset.");
+
+    window.onload();
+}
+
+<!--------------------------------------------------------------------->
+
+var edfIds = ['EDF01', 'EDF02', 'EDF03', 'EDF04', 'EDF05', 'EDF06', 'EDF07', 'EDF08', 'EDF09', 'EDF10', 'EDF11', 'EDF12', 'EDF14', 'EDF16', 'EDF17'];
+
+function setLocalStorageValues() {
+    edfIds.forEach(function(edfId) {
+        var valueA = localStorage.getItem(edfId + 'A');
+        document.getElementById(edfId + 'A').value = valueA !== null ? valueA : "";
+
+        var valueB = localStorage.getItem(edfId + 'BC');
+        document.getElementById(edfId + 'BC').value = valueB !== null ? valueB : "";
+    });
+}
+
+<!--------------------------------------------------------------------->
+
+window.onload = function() {
+    inputIds.forEach(function(id) {
+        var inputField = document.getElementById(id);
+        inputField.addEventListener('input', function() {
+          saveToLocalStorage();
+          setLocalStorageValues();
+          allSum()
+        });
+
+        var value = localStorage.getItem(id);
+        if (value !== null) {
+            inputField.value = value;
+        } else {
+            inputField.value = "";
+        }
+    });
+    setLocalStorageValues();
+    saveToLocalStorage();
+    allSum()
+};
+
+
+
+</script>
+
+</body>
+</html>

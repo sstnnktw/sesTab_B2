@@ -1,0 +1,749 @@
+<SES pre Tablet>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SES Chapter 3 - part 6</title>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        font-size: 16px;
+        display: flex;
+    }
+    .ses {
+        background-color: #b786db;
+        padding: 25px;
+        text-align:center;
+        font-size: 24px;
+    }
+    .chapter {
+        background-color: #edecf3;
+        padding: 20px;
+        font-size: 20px;
+        text-align:center;
+    }
+    .headABC {  /* ก., ข., ... */
+        background-color: #d2b3e8;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .head1 {  /* ข้อ 1., 2., 3., ... */
+        background-color: #DEC8EE;
+        padding: 15px;
+        padding-left: 30px;
+        font-size: 16px;
+    }
+    
+    /*--------------------------------*/
+    
+    .select {
+        padding: 50px;
+        padding-left: 80px;
+    }
+    .select select {
+        font-size: 16px;
+        height: 35px;
+        width: 250px;  
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column {
+        padding-left: 80px;
+    }
+
+    .column input {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    
+    /*--------------------------------*/
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    table th, table td {
+        border: 1px solid #f2f2f2;
+        padding: 10px;
+        text-align: left;
+    }
+    table th {
+    	font-weight: normal;
+        background-color: #DEC8EE;
+        text-align: center;
+        position: sticky;
+        /*top: 0;
+        z-index: 1;*/
+    }
+    
+    .table2 {
+        width: 40%;
+        margin-left: 80px;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    
+    /*--------------- ITEM ---------------*/
+    
+   #head1 { /* ข้อ 1., 2., 3., ... */
+        background-color: #E9DAF4;
+        padding: 15px ;
+    }
+   #head2 { /* ข้อ 2.1, 2.2, 2.3, ... */
+        padding: 15px 35px;
+        background-color: #F7EEFC;
+    }
+   #year {
+        background-color: #fff;
+    }
+   #gray {
+        background-color: #f8f6fa;
+    }
+   #Hsub1 { /* สำหรับ sub head1 */
+        padding-left: 35px;
+        min-width: 500px;
+    }
+   #Hsub2 { /* สำหรับ sub head2 */
+        padding-left: 60px;
+        min-width: 500px;
+    }
+   #Hsub3 { /* สำหรับ sub ของ sub head2 */
+        padding-left: 80px;
+        min-width: 500px;
+    }
+   #HsubG { /* gray */
+    	background-color: #f8f6fa;
+        padding-left: 35px;
+        min-width: 500px;
+    }
+   #total {
+    	background-color: #F7EEFC;
+        text-align: right;
+        padding: 20px;
+    }
+   #nn {
+        padding-left: 30px;
+    }
+    
+    /*--------------- INPUT ---------------*/
+    
+    input {
+        height: 32px;
+        width: 110px;
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        text-align: right;
+        display: block;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    input.price, input.year, input.gray, input.total {
+        width: 90px;
+    }
+    input.year {
+    	background-color: #F7EEFC;
+    }
+    input.gray {
+    	background-color: #EEEEEE;
+        pointer-events: none;
+    }
+    input.T { /* อื่น ๆ ระบุ */
+        width: 200px;
+        margin-left: 20px;
+        display: inline-block;
+    }
+    input.total {
+    	background-color: #EBD5F7;
+    }
+    tfoot td {
+        font-weight: bold;
+    }
+    
+    /*--------------------------------*/
+
+    .nn {
+        background-color: #FFF9E7;
+        font-size: 15px;
+        padding: 10px;
+        padding-left: 20px;
+    }  
+    .nn2 {
+        background-color: #FFF9E7;
+        font-size: 15px;
+        padding: 10px;
+        padding-left: 50px;
+    }
+    .remark {
+        color: #FF0000;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+    .note {    
+        font-size: 18px;
+        background-color: #E2EFDA;
+        padding: 20px;
+        padding-left: 20px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .notebox {
+        height: 200px;    
+        font-size: 16px;
+        color: #FF0000;
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #000;
+        margin-top: 10px;
+        white-space: pre-line;
+        overflow-y: auto;
+    }
+    #outer{
+        width:100%;
+        text-align: center;
+    }
+    .inner{
+        display: inline-block;
+    }
+    
+    /*--------------------------------*/
+    
+    input[type="number"]::-webkit-outer-spin-button, 
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    input[type="number"] {
+    -moz-appearance: textfield;
+    }
+    
+</style>
+</head>
+<body>
+
+<!----------------------------------------------- HEADDING ----------------------------------------------->
+
+<div class="ses"> <b>การสำรวจภาวะเศรษฐกิจและสังคมของครัวเรือน</b> </div>
+
+<div class="chapter">
+    <b>ตอนที่ 3 ค่าใช้จ่ายสินค้าและบริการ</b>
+    <br><span class="remark">- ข้อที่มี * หมายถึง ต้องมีการบันทึกข้อมูล <u>ปล่อย blank ไม่ได้</u></span>
+    <br><span class="remark">- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</span>
+</div>
+
+<div class="headABC">
+    <b>ค. การชำระหนี้ของครัวเรือน (ทั้งที่เป็นตัวเงินและสิ่งของ)</b>
+</div>
+
+<div class="nn">
+    <b>ถามทุกครัวเรือน</b> (แม้ว่าในปัจจุบันไม่มีหนี้สินแล้ว)
+</div>
+
+<!------------ AE00 ------------>
+
+<div id="AE00Div">
+  <div class="head1">
+  	  <span style="color: #ff0000;"><b>*</b></span>
+      <b>1.</b> (ปัจจุบัน) <b>ครัวเรือนของท่านมีหนี้สินหรือไม่</b>
+  </div>
+  
+  <div class="select">
+      <select id="AE00">
+          <option value="">-- กรุณาเลือก --</option>
+          <option value="0">0 - ไม่มี</option>
+          <option value="1">1 - มี</option>
+      </select>
+      
+      <span class="remark">AE00</span>
+  </div>
+</div><!-- AE00Div -->
+
+<!------------ AE01 ------------>
+
+<div id="AE01Div">
+  <div class="head1">
+  	  <span style="color: #ff0000;"><b>*</b></span>
+      <b>2.</b> (ในรอบ 12 เดือนที่แล้ว) <b>ครัวเรือนของท่านมีการชำระหนี้สินทุกประเภท</b> (<b>รวม ผ่อนบ้านและ/หรือที่ดิน) หรือไม่</b>
+  </div>
+  
+  <div class="select">
+      <select id="AE01" onchange="toggleDiv('AE0207Div', 'AE01');">
+          <option value="">-- กรุณาเลือก --</option>
+          <option value="0">0 - ไม่มี</option>
+          <option value="1">1 - มี</option>
+      </select>
+      
+      <span class="remark">AE01</span><br><br>
+      <span class="remark">- ซ่อน AE02-AE07 ไว้ และแสดงเมื่อ AE01 = 1</span><br>
+      <span class="remark">- if AE01 = 0 → AE02-AE07 = 0</span>
+  </div>
+  
+</div><!-- AE01Div -->
+
+<!------------------------------- AE02 - AE07 ------------------------------->
+
+<div id="AE0207Div" style="display: none;">
+
+  <div class="head1">
+      <b>3.</b> (ในรอบ 12 เดือนที่แล้ว) <b>จำนวนเงินที่ครัวเรือนชำระหนี้สิน</b> (ในข้อ 2) <b>จำแนกตามวัตถุประสงค์ของการกู้ยืม</b> (<b>รวม</b> เงินต้นและดอกเบี้ย)<br>
+      <span class="remark">- ข้อไหนไม่มีการชำระสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u></span>
+  </div>
+
+  <div class="nn2">
+      (ถ้าชำระเป็นสิ่งของ ให้<u>ให้ประเมินมูลค่า</u>)
+  </div>  
+
+<table>
+    
+    <tbody id="table">
+    
+    	<tr>
+            <th rowspan="2" style="min-width: 620px;"><b>รายการหนี้สิน</b></th>
+            <th colspan="2"><b>12 เดือนที่แล้ว</b></th>
+            <th colspan="2"><b>เฉลี่ยต่อเดือน</b></th>
+        </tr>
+        <tr>
+            <th style="min-width: 120px;">
+            	<b>ชำระเป็นตัวเงิน</b><br>
+            	<span style="font-size: 14px;">(จำนวนเงิน)</span>
+            </th>
+            <th style="min-width: 120px;">
+            	<b>ชำระเป็นสิ่งของ</b><br>
+                <span style="font-size: 14px;">(มูลค่า)</span>
+            </th>
+            <th style="min-width: 120px;">
+            	<b>ชำระเป็นตัวเงิน</b><br>
+            	<span style="font-size: 14px;">(จำนวนเงิน)</span>
+            </th>
+            <th style="min-width: 120px;">
+            	<b>ชำระเป็นสิ่งของ</b><br>
+                <span style="font-size: 14px;">(มูลค่า)</span>
+            </th>
+        </tr>
+        
+<!------------------------------------------------------------->
+       
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "- ใช้ซื้อ/เช่าซื้อบ้าน และ/หรือที่ดิน",
+                    "- ใช้ในการศึกษา"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "AE" + (i + 2).toString().padStart(2, '0') + "A";
+                    var ValueB = "AE" + (i + 2).toString().padStart(2, '0') + "BC";
+                    var ValueAY = "AE" + (i + 2).toString().padStart(2, '0') + "AY";
+                    var ValueBY = "AE" + (i + 2).toString().padStart(2, '0') + "BCY";
+                    row.innerHTML = `
+                        <td id="Hsub1">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueAY}"
+                                   placeholder="${ValueAY}"
+                                   oninput="CalMonthly('${ValueAY}', '${ValueA}');"
+                            >
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueBY}"
+                                   placeholder="${ValueBY}"
+                                   oninput="CalMonthly('${ValueBY}', '${ValueB}');"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                            >
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+<!--------------------------------------------------------> 
+        
+        <tr>
+            <td id="HsubG">- ใช้จ่ายอุปโภคบริโภคอื่น ๆ ในครัวเรือน</td>
+            <td id="gray"><input type="number" class="gray" id="AE04AY" placeholder="AE04AY"></td>
+            <td id="gray"><input type="number" class="gray" id="AE04BCY" placeholder="AE04BCY"></td>
+            <td id="gray"><input type="number" class="gray" id="AE04A" placeholder="AE04A"></td>
+            <td id="gray"><input type="number" class="gray" id="AE04BC" placeholder="AE04BC"></td>
+        </tr>
+        
+<!--------------------------------------------------------> 
+       
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 3;
+                var itemNames = [
+                    "- ใช้ซื้อยานพาหนะ",
+                    "- ใช้ซื้อสินค้าและบริการผ่านบัตรเครดิต (Credit card)",
+                    "- ใช้จ่ายอื่น ๆ"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "AE04_" + (i + 1).toString() + "A";
+                    var ValueB = "AE04_" + (i + 1).toString() + "BC";
+                    var ValueAY = "AE04_" + (i + 1).toString() + "AY";
+                    var ValueBY = "AE04_" + (i + 1).toString() + "BCY";
+                    row.innerHTML = `
+                        <td id="Hsub2">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueAY}"
+                                   placeholder="${ValueAY}"
+                                   oninput="CalMonthly('${ValueAY}', '${ValueA}');
+                                            updateSum('AE04_1AY','AE04_2AY','AE04_3AY', 'AE04AY');
+                                            updateSum('AE04_1A','AE04_2A','AE04_3A', 'AE04A');"
+                            >
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueBY}"
+                                   placeholder="${ValueBY}"
+                                   oninput="CalMonthly('${ValueBY}', '${ValueB}');
+                                   			updateSum('AE04_1BCY', 'AE04_2BCY', 'AE04_3BCY', 'AE04BCY');
+											updateSum('AE04_1BC', 'AE04_2BC', 'AE04_3BC', 'AE04BC');"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                            >
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+        
+<!--------------------------------------------------------> 
+                
+                var itemCount = 3;
+                var itemNames = [
+                    "- ใช้ในการทำธุรกิจ (ที่ไม่ใช่การเกษตร)",
+                    "- ใช้ในการทำการเกษตร (ปลูกพืช/เลี้ยงสัตว์/เพาะเลี้ยง/ประมง ฯลฯ)",
+                    "- อื่น ๆ เช่น หนี้จากการค้ำประกัน หนี้ค่าปรับ/จ่ายค่าเสียหาย ฯลฯ"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "AE" + (i + 5).toString().padStart(2, '0') + "A";
+                    var ValueB = "AE" + (i + 5).toString().padStart(2, '0') + "BC";
+                    var ValueAY = "AE" + (i + 5).toString().padStart(2, '0') + "AY";
+                    var ValueBY = "AE" + (i + 5).toString().padStart(2, '0') + "BCY";
+                    row.innerHTML = `
+                        <td id="Hsub1">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueAY}"
+                                   placeholder="${ValueAY}"
+                                   oninput="CalMonthly('${ValueAY}', '${ValueA}');">
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueBY}"
+                                   placeholder="${ValueBY}"
+                                   oninput="CalMonthly('${ValueBY}', '${ValueB}');">
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}">
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}">
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+                
+            }
+
+            InsertSub();
+        </script>
+        
+        </tbody>
+    
+</table>
+
+</div><!-- AE0207Div -->
+        
+<!--------------------------------------------------------------------------------------------->
+
+<div class="headABC">
+    <b>ง. การซื้อที่อยู่อาศัย (ด้วยเงินออมของครัวเรือน)</b>
+</div>
+
+<div class="nn">
+    <b><u>ไม่รวม</u></b> เงินกู้ หรือเงินผ่อนชำระบ้าน/ที่ดิน<u>ที่เป็นการชำระหนี้ในข้อ ค.</u>
+</div>
+
+<!------------ AE08 ------------>
+
+<div id="AE01Div">
+  <div class="head1">
+  	  <span style="color: #ff0000;"><b>*</b></span>
+      <b>1.</b> (ในรอบ 12 เดือนที่แล้ว) <b>ครัวเรือนนี้มีการซื้อที่อยู่อาศัย (ด้วยเงินออมของครัวเรือน) หรือไม่</b>
+  </div>
+  
+  <div class="select" style="padding-bottom: 0px;">
+      <select id="AE08" onchange="toggleDiv('AE09Div', 'AE08');">
+          <option value="">-- กรุณาเลือก --</option>
+          <option value="0">0 - ไม่มี</option>
+          <option value="1">1 - มี</option>
+      </select>
+      
+      <span class="remark">AE08</span><br><br>
+      <span class="remark">- ซ่อน AE09 ไว้ และแสดงเมื่อ AE08 = 1</span><br>
+      <span class="remark">- if AE08 = 0 → AE09 = 0</span>
+  </div>
+</div><!-- AE08Div -->
+
+<!------------------------------- AE09 ------------------------------->
+
+<div id="AE09Div" style="display: none; margin-top: 20px;">
+
+<span style="margin-left: 80px;">
+	<b>ระบุจำนวนเงิน :</b>
+</span>
+       
+<div class="container" style="margin-top: 20px;">
+
+        <div class="column">
+            12 เดือนที่แล้ว
+            <input type="number"
+            	   id="AE09Y"
+                   placeholder="AE09Y"
+                   oninput="CalMonthly('AE09Y', 'AE09');"
+            >
+        </div>
+
+        <div class="column">
+            เฉลี่ยต่อเดือน
+            <input class="gray"
+            	   type="number"
+                   id="AE09"
+                   placeholder="AE09"
+            >
+        </div>
+    
+</div>
+        <br><span style="margin-left: 80px;" class="remark">- ใส่จำนวนเงินในรอบ 12 เดือนที่แล้ว → โปรแกรมเฉลี่ยเป็นรายเดือนให้</span>
+
+</div><!-- AE09Div -->
+
+
+<!-------------------------------------------- NOTE -------------------------------------------->
+
+<div class="note">
+  <b>NOTE :</b>
+  <span class="remark">(C3.6_NOTE)</span>
+  <div id="rec01_note" class="notebox" contenteditable="true">*** เพิ่มฟังก์ชันพิมพ์ด้วยเสียง ***</div>
+</div>
+
+<div id="outer">
+  <div class="inner"><button onclick="back()">Back</button></div>
+  <div class="inner"><button onclick="index()">Index</button></div>
+  <div class="inner"><button onclick="next()">Next</button></div>
+</div>
+
+<button onclick="resetLocalStorage()">Reset localStorage</button>
+
+<!----------------------------------------------------------------------------------------------------------->
+
+<script>
+
+function CalMonthly(inputId, outputId) {
+    var inputValue = parseInt(document.getElementById(inputId).value);
+    if (!isNaN(inputValue)) {
+        document.getElementById(outputId).value = (inputValue / 12).toFixed(0);
+    } else {
+        document.getElementById(outputId).value = "";
+    }
+}
+
+<!-------------------------------------------------------------------------->
+
+function updateSum() {
+    var sum = 0;
+    for (var i = 0; i < arguments.length - 1; i++) {
+        var value = parseInt(document.getElementById(arguments[i]).value) || 0;
+        sum += value;
+    }
+    var outputId = arguments[arguments.length - 1];
+    if (sum != 0) {
+        document.getElementById(outputId).value = sum;
+    } else {
+        document.getElementById(outputId).value = "";
+    }
+}
+
+<!-------------------------------------------------------------------------->
+
+function toggleDiv(divId, selectId) {
+    var div = document.getElementById(divId);
+    var select = document.getElementById(selectId);
+    if (select.value === "1") {
+        div.style.display = "block";
+    } else {
+        div.style.display = "none";
+    }
+}
+
+<!-------------------------------------------------------------------------->
+
+function allF() {
+    toggleDiv('AE0207Div', 'AE01');
+    toggleDiv('AE09Div', 'AE08');
+    
+    CalMonthly('AE02AY', 'AE02A');
+    CalMonthly('AE03AY', 'AE03A');
+    CalMonthly('AE04_1AY', 'AE04_1A');
+    CalMonthly('AE04_2AY', 'AE04_2A');
+    CalMonthly('AE04_3AY', 'AE04_3A');
+    CalMonthly('AE05AY', 'AE05A');
+    CalMonthly('AE06AY', 'AE06A');
+    CalMonthly('AE07AY', 'AE07A');
+    
+    CalMonthly('AE02BCY', 'AE02BC');
+    CalMonthly('AE03BCY', 'AE03BC');
+    CalMonthly('AE04_1BCY', 'AE04_1BC');
+    CalMonthly('AE04_2BCY', 'AE04_2BC');
+    CalMonthly('AE04_3BCY', 'AE04_3BC');
+    CalMonthly('AE05BCY', 'AE05BC');
+    CalMonthly('AE06BCY', 'AE06BC');
+    CalMonthly('AE07BCY', 'AE07BC');
+    CalMonthly('AE09Y', 'AE09');
+    
+    updateSum('AE04_1AY','AE04_2AY','AE04_3AY', 'AE04AY');
+    updateSum('AE04_1A','AE04_2A','AE04_3A', 'AE04A');
+    updateSum('AE04_1BCY', 'AE04_2BCY', 'AE04_3BCY', 'AE04BCY');
+    updateSum('AE04_1BC', 'AE04_2BC', 'AE04_3BC', 'AE04BC');
+}
+
+<!--------------------------------------------------------------------->
+
+function back() {
+    saveToLocalStorage();
+    window.location.href = 'Chapter 3 - part 5.html';}
+
+<!--------------------------------------------------------------------->
+
+function index() {
+    saveToLocalStorage();
+    window.location.href = 'index.html';}
+
+<!--------------------------------------------------------------------->
+
+function next() {
+    saveToLocalStorage();
+    window.location.href = 'Chapter 4 - part 1.html';}
+
+<!--------------------------------------------------------------------->
+
+    var elements = document.querySelectorAll("[id]");
+    var inputIds = Array.from(elements).map(function(element) {
+        return element.id;
+    });
+    
+<!--------------------------------------------------------------------->
+
+function saveToLocalStorage() {
+    inputIds.forEach(function(id) {
+        localStorage.setItem(id, document.getElementById(id).value);
+    });
+}
+
+<!--------------------------------------------------------------------->
+
+function resetLocalStorage() {
+    localStorage.clear();
+    alert("localStorage has been reset.");
+
+    window.onload();
+}
+
+<!--------------------------------------------------------------------->
+
+window.onload = function() {
+    inputIds.forEach(function(id) {
+        var inputField = document.getElementById(id);
+        inputField.addEventListener('input', function() {
+            saveToLocalStorage();
+            allF();
+        });
+
+        var value = localStorage.getItem(id);
+        if (value !== null) {
+            inputField.value = value;
+        } else {
+            inputField.value = "";
+        }
+    });
+    saveToLocalStorage();
+    allF();
+};
+
+</script>
+
+
+</body>
+</html>

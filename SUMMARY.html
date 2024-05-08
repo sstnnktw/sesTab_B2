@@ -1,0 +1,647 @@
+<SES pre Tablet>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUMMARY</title>
+
+<style>
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    font-size: 16px;
+  }
+  .ses {
+    background-color: #b786db;
+    padding: 25px;
+    text-align:center;
+    font-size: 24px;
+  }
+  .frame {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .chapter {
+    background-color: #edecf3;
+    padding: 20px;
+    font-size: 20px;
+    text-align:center;
+  }
+  .head0 {
+  	background-color: #c9a4e4;
+    padding: 15px;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+  .head {
+  	background-color: #E9DAF4;
+    padding: 15px;
+    padding-left: 20px;
+    font-size: 16px;
+  }
+  .head2 {  /* EGxx_1, EGxx_2, ... */
+    background-color: #f8f6fa;
+    padding: 15px;
+    padding-left: 60px;
+    font-size: 16px;
+  }
+  .inputT {
+    background-color: #FEE4CD;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .inputT input {
+    font-size: 16px;
+  }
+  .input {
+    padding-left: 60px;
+    font-size: 16px;
+  }
+  .input input {
+    background-color: #EEEEEE;
+    color: #BFBFBF;
+    font-size: 16px;
+    height: 35px;
+    width: 250px;
+  }
+  .nn {
+  	background-color: #FFF9E7;
+    font-size: 15px;
+    padding: 10px;
+    padding-left: 20px;
+  } 
+  .remark {
+  	color: #FF0000;
+  	font-size: 15px;
+  	padding-left: 5px;
+  	margin-bottom: 50px;
+  } 
+  .container {
+  	display: flex;
+  	flex-wrap: wrap;
+  }
+  .container {
+  	display: flex;
+  	flex-wrap: wrap;
+  }
+  .column {
+  	flex: 1;
+  	padding-left: 100px;
+  }
+  .note {    
+    font-size: 18px;
+    background-color: #E2EFDA;
+    padding: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  .notebox {
+    height: 200px;    
+    font-size: 16px;
+    color: #FF0000;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    white-space: pre-line;
+    overflow-y: auto;
+  }
+    #outer{
+        width:100%;
+        text-align: center;
+    }
+    .inner{
+        display: inline-block;
+    }
+
+</style>
+</head>
+<body>
+
+<!----------------------------------------------- HEADDING ----------------------------------------------->
+
+<div class="ses">
+	<b>การสำรวจภาวะเศรษฐกิจและสังคมของครัวเรือน</b>
+</div>
+
+<div class="chapter">
+    <b>สรุปข้อมูลครัวเรือน</b>
+    <br><span class="remark">- รายละเอียดการคำนวณตัวแปรตาม <u>Data Dict</u></span>
+    <br><span class="remark">- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</span>
+</div>
+
+<!-------------------------------------------- ค่าใช้จ่าย -------------------------------------------->
+
+<div class="head0">
+	<b>ค่าใช้จ่าย</b>
+</div>
+
+
+<div class="head">
+	<b>ค่าใช้จ่ายทั้งสิ้นเฉลี่ยต่อเดือน</b>
+</div>
+
+<div class="frame">
+<div class="input">
+	<input id="EXPEND" type="number" readonly placeholder=" EXPEND">
+</div>
+</div><!-- frame -->
+    
+
+<div class="head">
+	<b>ค่าใช้จ่ายอุปโภคบริโภคเฉลี่ยต่อเดือน</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON" type="number" readonly placeholder=" CON">
+</div>
+</div><!-- frame -->
+
+    
+<div class="head2">
+	<b>1. ค่าใช้จ่ายเกี่ยวกับที่อยู่อาศัย</b> (ไม่รวม ค่าต่อเติมบ้าน)
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON1" type="number" readonly placeholder=" CON1">
+    <span class="remark">∑(EG01A → EG05A) + ∑(EG01BC → EG05BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>2. ค่าใช้จ่ายเกี่ยวกับเครื่องแต่งบ้าน เครื่องใช้เบ็ดเตล็ด และการดำเนินการในครัวเรือน</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON2" type="number" readonly placeholder=" CON2">
+    <span class="remark">∑(EG06A → EG27A) + ∑(EG06BC → EG27BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>3. ค่าจ้างบุคคลที่ให้บริการแก่ครัวเรือน</b> (รวม ค่าอาหารและสิ่งของที่ซื้อให้)
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON3" type="number" readonly placeholder=" CON3">
+    <span class="remark">∑(EG28A → EG29A) + ∑(EG28BC → EG29BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>4. ค่าใช้จ่ายเกี่ยวกับผ้า เสื้อผ้า และเครื่องแต่งกาย</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON4" type="number" readonly placeholder=" CON4">
+    <span class="remark">∑(EG30A → EG35A) + ∑(EG30BC → EG35BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>5. ค่าใช้จ่ายเกี่ยวกับรองเท้า</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON5" type="number" readonly placeholder=" CON5">
+    <span class="remark">∑(EG36A → EG38A) + ∑(EG36BC → EG38BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>6. ค่าใช้จ่ายส่วนบุคคล</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON6" type="number" readonly placeholder=" CON6">
+    <span class="remark">∑(EG39A → EG46A) + ∑(EG39BC → EG46BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>7. ค่าเวชภัณฑ์และค่าตรวจรักษาพยาบาล</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON7" type="number" readonly placeholder=" CON7">
+    <span class="remark">∑(EG47A → EG60A) + ∑(EG47BC → EG60BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>8. ค่าใช้จ่ายเกี่ยวกับการเดินทางและการสื่อสาร</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON8" type="number" readonly placeholder=" CON8">
+    <br><br><span class="remark">∑(EG61A → EG87A, EG781A, EG782A, EG791A) + ∑(EG61BC → EG87BC, EG781BC, EG782BC, EG791BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>9. ค่าใช้จ่ายเกี่ยวกับการศึกษา</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON9" type="number" readonly placeholder=" CON9">
+    <span class="remark">∑(EG88A → EG92A) + ∑(EG88BC → EG92BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>10. ค่าใช้จ่ายเกี่ยวกับการบันเทิง การอ่าน และกิจกรรมทางศาสนา</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON10" type="number" readonly placeholder=" CON10">
+    <span class="remark">∑(EG93A → EG110A) + ∑(EG93BC → EG110BC)</span>
+</div>
+</div><!-- frame -->
+
+
+<div class="head2">
+	<b>11. ค่าใช้จ่ายเกี่ยวกับการจัดงานพิธีในโอกาสพิเศษ</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="CON11" type="number" readonly placeholder=" CON11">
+    <span class="remark">EG111A + EG111BC</span>
+</div>
+</div><!-- frame -->
+    
+
+<div class="head">
+	<b>ค่าใช้จ่ายที่ไม่เกี่ยวกับการอุปโภคบริโภคเฉลี่ยต่อเดือน</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="NCON" type="number" readonly placeholder=" NCON">
+</div>
+</div><!-- frame -->
+
+
+<div class="head">
+	<b>ค่าใช้จ่ายอาหาร เครื่องดื่ม และยาสูบเฉลี่ยต่อเดือน</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="FBTP"type="number" readonly placeholder=" FBTP">
+</div>
+</div><!-- frame -->
+
+<!-------------------------------------------- รายได้ -------------------------------------------->
+
+<div class="head0">
+	<b>รายได้</b>
+</div>
+
+
+<div class="head">
+	<b> รายได้ทั้งสิ้นเฉลี่ยต่อเดือน</b>
+</div>
+
+<div class="frame">
+<div class="input">
+	<input id="INCOME" type="number" readonly placeholder=" INCOME">
+</div>
+</div><!-- frame -->
+    
+
+<div class="head">
+	<b>รายได้จากค่าจ้าง/เงินเดือนเฉลี่ยต่อเดือน</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="INC1" type="number" readonly placeholder=" INC1">
+</div>
+</div><!-- frame -->
+    
+
+<div class="head">
+	<b>รายได้จากการประกอบธุรกิจเฉลี่ยต่อเดือน</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="INC2" type="number" readonly placeholder=" INC2">
+</div>
+</div><!-- frame -->
+    
+
+<div class="head">
+	<b>รายได้จากการประกอบการเกษตรเฉลี่ยต่อเดือน</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="INC3" type="number" readonly placeholder=" INC3">
+</div>
+</div><!-- frame -->
+    
+
+<div class="head">
+	<b>รายได้จากแหล่งอื่น ๆ เฉลี่ยต่อเดือน</b>
+</div>
+
+<div class="frame">
+<div class="input">
+	<input id="INC4" type="number" readonly placeholder=" INC4">
+</div>
+</div><!-- frame -->
+
+<div class="head0">
+	<b>ตรวจสอบยอดรวมรายได้ - ค่าใช้จ่าย</b>
+</div>
+  
+<div class="frame">
+<div class="input">
+	<input id="COMP" type="number" readonly placeholder=" COMP">
+</div>
+</div><!-- frame -->
+
+
+<!-------------------------------------------- NOTE -------------------------------------------->
+
+<div class="note">
+	<b>NOTE :</b>
+  <span class="remark">SUMMARY_NOTE</span>
+	<div id="ses3_note" class="notebox" contenteditable="true">*** เพิ่มฟังก์ชันพิมพ์ด้วยเสียง ***</div>
+</div>
+
+<div id="outer">
+  <div class="inner"><button onclick="back()">Back</button></div>
+  <div class="inner"><button onclick="index()">Index</button></div>
+</div>
+
+<button onclick="resetLocalStorage()">Reset localStorage</button>
+
+<!----------------------------------------------------------------------------------------------------------->
+
+<script>
+
+<!--------------------------------------------------------------------->
+
+function back() {
+    saveToLocalStorage();
+    window.location.href = 'SES3.html';}
+
+<!--------------------------------------------------------------------->
+
+function index() {
+    saveToLocalStorage();
+    window.location.href = 'index.html';}
+    
+<!--------------------------------------------------------------------->
+
+    var elements = document.querySelectorAll("[id]");
+    var inputIds = Array.from(elements).map(function(element) {
+        return element.id;
+    });
+    
+<!--------------------------------------------------------------------->
+
+function saveToLocalStorage() {
+    inputIds.forEach(function(id) {
+        localStorage.setItem(id, document.getElementById(id).value);
+    });
+}
+
+<!--------------------------------------------------------------------->
+
+function resetLocalStorage() {
+    localStorage.clear();
+    alert("localStorage has been reset.");
+}
+
+<!--------------------------------------------------------------------->
+
+    var CONA = parseInt(localStorage.getItem("CONA")) || 0;
+    var CONBC = parseInt(localStorage.getItem("CONBC")) || 0;
+    var CON = Math.round(CONA + CONBC);
+    
+<!------------------------------------------------->
+
+    var CON1A = 0;
+    for (var i = 1; i <= 5; i++) {
+        CON1A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON1BC = 0;
+    for (var i = 1; i <= 5; i++) {
+        CON1BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON1 = Math.round(CON1A + CON1BC);
+    
+<!------------------------------------------------->
+
+    var CON2A = 0;
+    for (var i = 6; i <= 27; i++) {
+        CON2A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON2BC = 0;
+    for (var i = 6; i <= 27; i++) {
+        CON2BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON2 = Math.round(CON2A + CON2BC);
+    
+<!------------------------------------------------->
+
+    var CON3A = 0;
+    for (var i = 28; i <= 29; i++) {
+        CON3A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON3BC = 0;
+    for (var i = 28; i <= 29; i++) {
+        CON3BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON3 = Math.round(CON3A + CON3BC);
+    
+<!------------------------------------------------->
+
+    var CON4A = 0;
+    for (var i = 30; i <= 35; i++) {
+        CON4A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON4BC = 0;
+    for (var i = 30; i <= 35; i++) {
+        CON4BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON4 = Math.round(CON4A + CON4BC);
+    
+<!------------------------------------------------->
+
+    var CON5A = 0;
+    for (var i = 36; i <= 38; i++) {
+        CON5A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON5BC = 0;
+    for (var i = 36; i <= 38; i++) {
+        CON5BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON5 = Math.round(CON5A + CON5BC);
+    
+<!------------------------------------------------->
+
+    var CON6A = 0;
+    for (var i = 39; i <= 46; i++) {
+        CON6A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON6BC = 0;
+    for (var i = 39; i <= 46; i++) {
+        CON6BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON6 = Math.round(CON6A + CON6BC);
+    
+<!------------------------------------------------->
+
+    var CON7A = 0;
+    for (var i = 47; i <= 60; i++) {
+        CON7A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON7BC = 0;
+    for (var i = 47; i <= 60; i++) {
+        CON7BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON7 = Math.round(CON7A + CON7BC);
+    
+<!------------------------------------------------->
+
+    var CON8A = 0;
+      for (var i = 61; i <= 87; i++) {
+          CON8A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+      }
+
+      CON8A += (parseInt(localStorage.getItem("EG781A")) || 0) +
+               (parseInt(localStorage.getItem("EG782A")) || 0) +
+               (parseInt(localStorage.getItem("EG791A")) || 0);
+
+      var CON8BC = 0;
+      for (var i = 61; i <= 87; i++) {
+          CON8BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+      }
+
+      CON8BC += (parseInt(localStorage.getItem("EG781BC")) || 0) +
+                (parseInt(localStorage.getItem("EG782BC")) || 0) +
+                (parseInt(localStorage.getItem("EG791BC")) || 0);
+
+      var CON8 = Math.round(CON8A + CON8BC);
+    
+<!------------------------------------------------->
+
+    var CON9A = 0;
+    for (var i = 88; i <= 92; i++) {
+        CON9A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON9BC = 0;
+    for (var i = 88; i <= 92; i++) {
+        CON9BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON9 = Math.round(CON9A + CON9BC);
+    
+<!------------------------------------------------->
+
+    var CON10A = 0;
+    for (var i = 93; i <= 110; i++) {
+        CON10A += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "A")) || 0;
+    }
+    var CON10BC = 0;
+    for (var i = 93; i <= 110; i++) {
+        CON10BC += parseInt(localStorage.getItem("EG" + i.toString().padStart(2, '0') + "BC")) || 0;
+    }
+    var CON10 = Math.round(CON10A + CON10BC);
+    
+<!------------------------------------------------->
+
+	var EG111A = parseInt(localStorage.getItem("EG111A"));
+    var EG111BC = parseInt(localStorage.getItem("EG111BC"));
+    var CON11 = Math.round(EG111A + EG111BC);
+
+<!--------------------------------------------------------------------->
+
+    var NCONA = parseInt(localStorage.getItem("NCONA")) || 0;
+    var NCONBC = parseInt(localStorage.getItem("NCONBC")) || 0;
+    var NCON = Math.round(NCONA + NCONBC);
+
+<!--------------------------------------------------------------------->
+
+    var FBTP_A = (parseInt(localStorage.getItem("EF_A")) || 0)*4.3;
+    var FBTP_BC = (parseInt(localStorage.getItem("EF_BC")) || 0)*4.3;
+    var FBTP = Math.round(FBTP_A + FBTP_BC);
+    
+    var EXPEND = CON + NCON + FBTP;
+
+<!--------------------------------------------------------------------->
+
+    var INCOME = Math.round((parseInt(localStorage.getItem("INC")) / 12));
+    var INC1 = Math.round((parseInt(localStorage.getItem("IN02")) / 12));
+    var INC2 = Math.round((parseInt(localStorage.getItem("IN03")) / 12));
+    var INC3 = Math.round((parseInt(localStorage.getItem("IN04")) / 12));
+    var INC4D = 0;
+    for (var i = 5; i <= 16; i++) {
+        INC4D += parseInt(localStorage.getItem("IN" + i.toString().padStart(2, '0'))) || 0;
+    }
+    var INC4 = (INC4D / 12).toFixed(0);
+    if (INC4 === '0') {
+        INC4 = '';
+	}
+    
+    var COMP = 0;
+    	if (INCOME > EXPEND) {
+            COMP = Math.round((((INCOME-EXPEND)/INCOME)*100));
+        }
+        else{
+            COMP = Math.round((((EXPEND-INCOME)/EXPEND)*100));       
+        }
+    
+    document.getElementById('EXPEND').value = EXPEND === 0 ? "" : EXPEND;
+    document.getElementById('CON').value = CON === 0 ? "" : CON;
+    document.getElementById('CON1').value = CON1 === 0 ? "" : CON1;
+    document.getElementById('CON2').value = CON2 === 0 ? "" : CON2;
+    document.getElementById('CON3').value = CON3 === 0 ? "" : CON3;
+    document.getElementById('CON3').value = CON3 === 0 ? "" : CON3;
+    document.getElementById('CON4').value = CON4 === 0 ? "" : CON4;
+    document.getElementById('CON5').value = CON5 === 0 ? "" : CON5;
+    document.getElementById('CON6').value = CON6 === 0 ? "" : CON6;
+    document.getElementById('CON7').value = CON7 === 0 ? "" : CON7;
+    document.getElementById('CON8').value = CON8 === 0 ? "" : CON8;
+    document.getElementById('CON9').value = CON9 === 0 ? "" : CON9;
+    document.getElementById('CON10').value = CON10 === 0 ? "" : CON10;
+    document.getElementById('CON11').value = CON11 === 0 ? "" : CON11;
+    document.getElementById('NCON').value = NCON === 0 ? "" : NCON;
+    document.getElementById('FBTP').value = FBTP === 0 ? "" : FBTP;
+    document.getElementById('INCOME').value = INCOME === 0 ? "" : INCOME;
+    document.getElementById('INC1').value = INC1 === 0 ? "" : INC1;
+    document.getElementById('INC2').value = INC2 === 0 ? "" : INC2;
+    document.getElementById('INC3').value = INC3 === 0 ? "" : INC3;
+    document.getElementById('INC4').value = INC4 === 0 ? "" : INC4;
+    document.getElementById('COMP').value = COMP === 0 ? "" : COMP;
+
+    
+</script>
+
+</body>
+</html>

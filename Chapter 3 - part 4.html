@@ -1,0 +1,875 @@
+
+<SES pre Tablet>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SES Chapter 3 - part 4</title>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        font-size: 16px;
+        display: flex;
+    }
+    .ses {
+        background-color: #b786db;
+        padding: 25px;
+        text-align:center;
+        font-size: 24px;
+    }
+    .chapter {
+        background-color: #edecf3;
+        padding: 20px;
+        font-size: 20px;
+        text-align:center;
+    }
+    .headABC {  /* ก., ข., ... */
+        background-color: #d2b3e8;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .head1 {  /* ข้อ 1., 2., 3., ... */
+        background-color: #DEC8EE;
+        padding: 15px;
+        padding-left: 30px;
+        font-size: 16px;
+    }
+    
+    /*--------------------------------*/
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    table th, table td {
+        border: 1px solid #f2f2f2;
+        padding: 10px;
+        text-align: left;
+    }
+    table th {
+    	font-weight: normal;
+        background-color: #DEC8EE;
+        text-align: center;
+        position: sticky;
+        /*top: 0;
+        z-index: 1;*/
+    }
+    thead {
+        position: sticky;
+        top: 0;
+        background: #eee;
+    }
+    
+    /*--------------- ITEM ---------------*/
+    
+   #head1 { /* ข้อ 1., 2., 3., ... */
+        background-color: #E9DAF4;
+        padding: 15px ;
+    }
+   #head2 { /* ข้อ 2.1, 2.2, 2.3, ... */
+        padding: 15px 35px;
+        background-color: #F7EEFC;
+    }
+   #year {
+        background-color: #fff;
+    }
+   #gray {
+        background-color: #f8f6fa;
+    }
+   #Hsub1 { /* สำหรับ sub head1 */
+        padding-left: 35px;    }
+   #Hsub2 { /* สำหรับ sub head2 */
+        padding-left: 60px;    }
+   #Hsub3 { /* สำหรับ sub ของ sub head2 */
+        padding-left: 80px;    }
+   #HsubG { /* gray */
+    	background-color: #f8f6fa;
+        padding-left: 60px;    }
+   #total {
+    	background-color: #F7EEFC;
+        text-align: right;
+        padding: 20px;
+    }
+   #nn {
+        padding-left: 30px;
+    }
+    
+    /*--------------- INPUT ---------------*/
+    
+    input {
+        height: 32px;
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        text-align: right;
+        display: block; 
+        margin: 0 auto; 
+        font-size: 15px;
+    }
+    input.price, input.year, input.gray, input.total {
+        width: 100px;
+    }
+    input.year {
+    	background-color: #F7EEFC;
+    }
+    input.gray {
+    	background-color: #EEEEEE;
+        pointer-events: none;
+    }
+    input.T { /* อื่น ๆ ระบุ */
+        width: 200px;
+        margin-left: 20px;
+        display: inline-block;
+    }
+    input.total {
+    	background-color: #EBD5F7;
+        pointer-events: none;
+    }
+    tfoot td {
+        font-weight: bold;
+    }
+    
+    /*--------------------------------*/
+
+    .nn {
+        background-color: #FFF9E7;
+        font-size: 15px;
+        padding: 10px;
+        padding-left: 20px;
+    }  
+    .nn2 {
+        background-color: #FFF9E7;
+        font-size: 15px;
+        padding: 10px;
+        padding-left: 60px;
+    }
+    .remark {
+        color: #FF0000;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+    .note {    
+        font-size: 18px;
+        background-color: #E2EFDA;
+        padding: 20px;
+        padding-left: 20px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .notebox {
+        height: 200px;    
+        font-size: 16px;
+        color: #FF0000;
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #000;
+        margin-top: 10px;
+        white-space: pre-line;
+        overflow-y: auto;
+    }
+    #outer{
+        width:100%;
+        text-align: center;
+    }
+    .inner{
+        display: inline-block;
+    }
+    
+    /*--------------------------------*/
+    
+    input[type="number"]::-webkit-outer-spin-button, 
+    input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    input[type="number"] {
+    -moz-appearance: textfield;
+    }
+    
+</style>
+</head>
+<body>
+
+<!----------------------------------------------- HEADDING ----------------------------------------------->
+
+<div class="ses"> <b>การสำรวจภาวะเศรษฐกิจและสังคมของครัวเรือน</b> </div>
+
+<div class="chapter">
+    <b>ตอนที่ 3 ค่าใช้จ่ายสินค้าและบริการ</b>
+    <br><span class="remark">- ข้อไหนไม่มีค่าใช้จ่ายสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u></span>
+    <br><span class="remark">- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</span>
+</div>
+
+<div class="nn">
+    ให้บันทึก <b>"จำนวนเงิน"</b> (ถ้าซื้อ/จ่าย) หรือ <b>"มูลค่า"</b> (ถ้าไม่ได้ซื้อ/จ่าย เบิกได้) ของค่าใช้จ่ายแต่ละรายการตาม<b>คาบเวลาที่กำหนดให้</b>
+</div>
+
+<div class="headABC"> <b>ก. ค่าใช้จ่ายอุปโภคบริโภคของครัวเรือน</b> </div>
+
+<table>
+  <thead>
+    
+    	<tr>
+            <th rowspan="2" style="min-width: 620px;"><b>รายการค่าใช้จ่าย</b></th>
+            <th colspan="2"><b>12 เดือนที่แล้ว</b></th>
+            <th colspan="2"><b>เดือนที่แล้ว</b></th>
+        </tr>
+        <tr>
+            <th style="min-width: 120px;">
+            	<b>ซื้อ/จ่าย</b><br><br>
+            	<span style="font-size: 14px;">(จำนวนเงิน)</span>
+            </th>
+            <th style="min-width: 120px;">
+            	<b>ไม่ได้ซื้อ/จ่าย<br>เบิกได้</b><br>
+                <span style="font-size: 14px;">(มูลค่า)</span>
+            </th>
+            <th style="min-width: 120px;">
+            	<b>ซื้อ/จ่าย</b><br><br>
+            	<span style="font-size: 14px;">(จำนวนเงิน)</span>
+            </th>
+            <th style="min-width: 120px;">
+            	<b>ไม่ได้ซื้อ/จ่าย<br>เบิกได้</b><br>
+                <span style="font-size: 14px;">(มูลค่า)</span>
+            </th>
+        </tr>
+        
+  </thead>
+        
+<!------------------------------------------------------------------------------------------------------->
+    
+    <tbody id="table">
+        
+        <tr>
+            <td colspan="5" id="head1"><b>9. ค่าใช้จ่ายเกี่ยวกับการศึกษา (ในรอบ12 เดือนที่แล้ว)</b></td>
+		</tr>  
+        
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+		</tr>
+       
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 5;
+                var itemNames = [
+                    "9.1 ค่าเล่าเรียน/ค่าธรรมเนียม/ค่าบำรุงการศึกษาในโรงเรียนหรือสถานศึกษา<u>ของรัฐ</u>",
+                    "9.2 ค่าเล่าเรียน/ค่าธรรมเนียม/ค่าบำรุงการศึกษาในโรงเรียนหรือสถานศึกษา<u>ของเอกชน</u>",
+                    "9.3 ค่าหนังสือ เครื่องเขียน และอุปกรณ์ในการเรียน",
+                    "9.4 ค่าเรียนพิเศษ เรียนวิชาชีพ เรียนดนตรี/เต้นรำ ฯลฯ",
+                    "9.5 ค่าใช้จ่ายอื่น ๆ (เช่น ค่าถ่ายเอกสาร ค่าจัดทำรายงาน ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EG" + (i + 88).toString().padStart(2, '0') + "A";
+                    var ValueB = "EG" + (i + 88).toString().padStart(2, '0') + "BC";
+                    var ValueAY = "EG" + (i + 88).toString().padStart(2, '0') + "AY";
+                    var ValueBY = "EG" + (i + 88).toString().padStart(2, '0') + "BCY";
+                    row.innerHTML = `
+                        <td id="Hsub1">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueAY}"
+                                   placeholder="${ValueAY}"
+                            >
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueBY}"
+                                   placeholder="${ValueBY}"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                            >
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+<!------------------------------------------------------------------------------------------------------->
+
+		<tr>
+            <td colspan="5" id="head1"><b>10. ค่าใช้จ่ายเกี่ยวกับการบันเทิง การอ่าน และกิจกรรมทางศาสนา</b></td>
+		</tr> 
+        
+        <tr>
+            <td colspan="5" id="head2"><b>10.1 ค่าซื้ออุปกรณ์การบันเทิง และกีฬา</b></td>
+		</tr> 
+       
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 5;
+                var itemNames = [
+                    "โทรทัศน์ วิทยุ เครื่องเล่นวีซีดี/ดีวีดี/บลูเรย์",
+                    "กล้องถ่ายรูป/วีดีโอ เครื่องฉายภาพยนตร์และภาพนิ่ง <br>(<b>รวม</b> แบตเตอรี่และเมมโมรี่การ์ดที่มากับเครื่อง)",
+                    "จานรับสัญญาณดาวเทียม กล่องทีวีดิจิทัล และค่าติดตั้งเคเบิลทีวี",
+                    "เครื่องคอมพิวเตอร์ และอุปกรณ์ที่เกี่ยวข้อง",
+                    "อุปกรณ์กีฬา และบริหารร่างกาย (เช่น ลูกฟุตบอล ไม้แบดมินตัน ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EG" + (i + 93).toString().padStart(2, '0') + "A";
+                    var ValueB = "EG" + (i + 93).toString().padStart(2, '0') + "BC";
+                    var ValueAY = "EG" + (i + 93).toString().padStart(2, '0') + "AY";
+                    var ValueBY = "EG" + (i + 93).toString().padStart(2, '0') + "BCY";
+                    row.innerHTML = `
+                        <td id="Hsub2">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueAY}"
+                                   placeholder="${ValueAY}"
+                            >
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueBY}"
+                                   placeholder="${ValueBY}"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                            >
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                            >
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+        <tr>
+            <td id="Hsub2">ค่าซ่อมแซม/บำรุงรักษา และอื่น ๆ (ระบุ)<input class="T" id="EG98_T" placeholder="EG98_T" oninput="saveToLocalStorage(this.id);"></td>
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EG98AY"
+                       placeholder="EG98AY"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EG98BCY"
+                       placeholder="EG98BCY"
+                >
+            </td>
+            
+            <td id="gray">
+            	<input type="number"
+                	   class="gray"
+                       id="EG98A"
+                       placeholder="EG98A"
+                >
+            </td>
+            
+            <td id="gray">
+            	<input type="number"
+                	   class="gray"
+                       id="EG98BC"
+                       placeholder="EG98BC"
+                >
+            </td>
+        </tr>
+        
+<!------------------------------------------------------------------------------------------------------->
+        
+        <tr>
+            <td colspan="5" id="head2"><b>10.2 ค่าซื้อเครื่องเล่น สัตว์เลี้ยง ไม้ประดับ และค่าใช้จ่ายเกี่ยวกับการบันเทิง</b></td>
+		</tr> 
+       
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 2;
+                var itemNames = [
+                    "ค่าซื้อเครื่อง/ของเล่นชนิดต่าง ๆ (เช่น รถเด็กเล่น เครื่องบินบังคับวิทยุ ฯลฯ)",
+                    "ค่าซื้อสัตว์เลี้ยง/อุปกรณ์เลี้ยงสัตว์ (<b>รวม</b> ค่าอาหารและอื่นๆ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EG" + (i + 99).toString().padStart(2, '0') + "A";
+                    var ValueB = "EG" + (i + 99).toString().padStart(2, '0') + "BC";
+                    var ValueAY = "EG" + (i + 99).toString().padStart(2, '0') + "AY";
+                    var ValueBY = "EG" + (i + 99).toString().padStart(2, '0') + "BCY";
+                    row.innerHTML = `
+                        <td id="Hsub2">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueAY}"
+                                   placeholder="${ValueAY}"
+                        	>
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueBY}"
+                                   placeholder="${ValueBY}"
+                        	>
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                        	>
+                        </td>
+                        
+                        <td id="gray">
+                        	<input type="number"
+                            	   class="gray"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                        	>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+                
+<!-------------------------------------------------------->
+                
+                var itemCount = 3;
+                var itemNames = [
+                    "ค่าต้นไม้/พันธุ์ไม้ประดับ/ดอกไม้สด (<b>รวม</b> ปุ๋ยและอุปกรณ์ทำสวน)",
+                    "ค่าซื้อ/เช่า วีซีดี/ ดีวีดี ค่าสมาชิกเคเบิลทีวี ค่าถ่ายรูป (ฟิล์ม ล้าง/อัด/ขยายภาพ) ค่าซื้อแอปพลิเคชั่น/ค่าบริการ Streaming",
+                    "ค่าซ่อมแซม/บำรุงรักษา และอื่น ๆ (เช่น ของที่ระลึก/ของสะสม ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EG" + (i + 101).toString().padStart(2, '0') + "A";
+                    var ValueB = "EG" + (i + 101).toString().padStart(2, '0') + "BC";
+                    row.innerHTML = `
+                        <td id="Hsub2" colspan="3">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                            >
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                            >
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+                
+            }
+
+            InsertSub();
+        </script>
+        
+<!------------------------------------------------------------------------------------------------------->
+        
+        <tr>
+            <td colspan="5" id="head2"><b>10.3 ค่าผ่านประตู ค่าเรียนและเล่นกีฬา</b></td>
+		</tr> 
+       
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 4;
+                var itemNames = [
+                    "ดูภาพยนตร์/กีฬา/การแสดงต่าง ๆ (เช่น ฟุตบอล การแสดงดนตรี งานเทศกาล ฯลฯ)",
+                    "สนามเด็กเล่นและสวนสนุก สวนสัตว์ โบราณสถาน พิพิธภัณฑ์ อุทยานฯ",
+                    "ค่าเรียนและเล่นกีฬา (เช่น ว่ายน้ำ เทควันโด เทนนิส กอล์ฟ ฯลฯ)",
+                    "อื่น ๆ (เช่น ค่าสมาชิกสโมสร/สมาคมต่าง ๆ ฯลฯ)"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EG" + (i + 104).toString().padStart(2, '0') + "A";
+                    var ValueB = "EG" + (i + 104).toString().padStart(2, '0') + "BC";
+                    row.innerHTML = `
+                        <td id="Hsub2" colspan="3">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                            >
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                            >
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+<!------------------------------------------------------------------------------------------------------->
+        
+        <tr>
+            <td colspan="5" id="head2"><b>10.4 ค่าใช้จ่ายเกี่ยวกับการอ่าน และกิจกรรมทางศาสนา/ลัทธิความเชื่อ</b></td>
+		</tr> 
+       
+        <script>
+        
+            function InsertSub() {
+                var tableBody = document.getElementById('table');
+                var itemCount = 3;
+                var itemNames = [
+                    "ค่าหนังสือพิมพ์ นิตยสาร และหนังสือประเภทอื่น ๆ (ที่ไม่ใช่หนังสือเรียนทั้งรุปเล่ม/ e-book /Online)",
+                    "ค่าธรรมเนียมการใช้ห้องสมุดและอื่น ๆ (เช่น ค่าเช่าหนังสือ/ค่าปรับ ฯลฯ)",
+                    "ค่าอาหาร/ของถวายพระ/ไหว้เจ้า (<b>รวม</b> ดอกไม้/ธูปเทียน) ค่าเช่าพระและอื่น ๆ"
+                ];
+
+                for (var i = 0; i < itemCount; i++) {
+                    var row = document.createElement('tr');
+                    
+                    var ValueA = "EG" + (i + 108).toString().padStart(2, '0') + "A";
+                    var ValueB = "EG" + (i + 108).toString().padStart(2, '0') + "BC";
+                    row.innerHTML = `
+                        <td id="Hsub2" colspan="3">${itemNames[i]}</td>
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueA}"
+                                   placeholder="${ValueA}"
+                            >
+                        </td>
+                        
+                        <td>
+                        	<input type="number"
+                            	   class="price"
+                                   id="${ValueB}"
+                                   placeholder="${ValueB}"
+                            >
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+
+            InsertSub();
+        </script>
+        
+<!------------------------------------------------------------------------------------------------------->
+        
+        <tr>
+            <td colspan="5" id="head1"><b>11. ค่าใช้จ่ายเกี่ยวกับการจัดงานพิธีในโอกาสพิเศษ</b></td>
+		</tr> 
+        
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+		</tr>
+        
+        <tr>
+            <td id="Hsub1">ค่าจัดงานแต่งงาน งานวันเกิด งานบวช งานศพและอื่น ๆ</td>
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EG111AY"
+                       placeholder="EG111AY"
+                >
+            </td>
+            
+            <td>
+            	<input type="number"
+                	   class="price"
+                       id="EG111BCY"
+                       placeholder="EG111BCY"
+                >
+            </td>
+            
+            <td id="gray">
+            	<input type="number"
+                	   class="gray"
+                       id="EG111A"
+                       placeholder="EG111A"
+                >
+            </td>
+            
+            <td id="gray">
+            	<input type="number"
+                	   class="gray"
+                       id="EG111BC"
+                       placeholder="EG111BC"
+                >
+            </td>
+        </tr>
+
+    </tbody>
+        
+<!--------------------------------------------------------> 
+        
+        <tfoot>
+            <tr>
+                <td id="total" colspan="3">รวมค่าใช้จ่ายอุปโภคบริโภค (EG01 - EG111)</td>
+                <td id="total">
+                	<input type="number"
+                    	   class="total"
+                           id="CONA"
+                           placeholder="CONA"
+                    >
+                </td>
+                
+                <td id="total">
+                	<input type="number"
+                    	   class="total"
+                           id="CONBC"
+                           placeholder="CONBC"
+                    >
+                </td>
+            </tr>
+        </tfoot>
+    
+</table>
+
+
+<!-------------------------------------------- NOTE -------------------------------------------->
+
+<div class="note">
+  <b>NOTE :</b>
+  <span class="remark">(C3.4_NOTE)</span>
+  <div id="rec01_note" class="notebox" contenteditable="true">*** เพิ่มฟังก์ชันพิมพ์ด้วยเสียง ***</div>
+</div>
+
+<div id="outer">
+  <div class="inner"><button onclick="back()">Back</button></div>
+  <div class="inner"><button onclick="index()">Index</button></div>
+  <div class="inner"><button onclick="next()">Next</button></div>
+</div>
+
+<button onclick="resetLocalStorage()">Reset localStorage</button>
+
+<!----------------------------------------------------------------------------------------------------------->
+
+<script>
+
+function CalMonthly(inputId, outputId) {
+    var inputValue = parseInt(document.getElementById(inputId).value);
+    if (!isNaN(inputValue)) {
+        document.getElementById(outputId).value = (inputValue / 12).toFixed(0);
+    } else {
+        document.getElementById(outputId).value = "";
+    }
+}
+
+function allMonthly() {
+	CalMonthly('EG88AY', 'EG88A');
+    CalMonthly('EG89AY', 'EG89A');
+    CalMonthly('EG90AY', 'EG90A');
+    CalMonthly('EG91AY', 'EG91A');
+    CalMonthly('EG92AY', 'EG92A');
+    CalMonthly('EG93AY', 'EG93A');
+    CalMonthly('EG94AY', 'EG94A');
+    CalMonthly('EG95AY', 'EG95A');
+    CalMonthly('EG96AY', 'EG96A');
+    CalMonthly('EG97AY', 'EG97A');
+    CalMonthly('EG98AY', 'EG98A');
+    CalMonthly('EG99AY', 'EG99A');
+    CalMonthly('EG100AY', 'EG100A');
+    CalMonthly('EG111AY', 'EG111A');
+    
+    CalMonthly('EG88BCY', 'EG88BC');
+    CalMonthly('EG89BCY', 'EG89BC');
+    CalMonthly('EG90BCY', 'EG90BC');
+    CalMonthly('EG91BCY', 'EG91BC');
+    CalMonthly('EG92BCY', 'EG92BC');
+    CalMonthly('EG93BCY', 'EG93BC');
+    CalMonthly('EG94BCY', 'EG94BC');
+    CalMonthly('EG95BCY', 'EG95BC');
+    CalMonthly('EG96BCY', 'EG96BC');
+    CalMonthly('EG97BCY', 'EG97BC');
+    CalMonthly('EG98BCY', 'EG98BC');
+    CalMonthly('EG99BCY', 'EG99BC');
+    CalMonthly('EG100BCY', 'EG100BC');
+    CalMonthly('EG111BCY', 'EG111BC');
+}
+
+<!-------------------------------------------------------------------------->
+
+var CON = CONA + CONBC;
+
+function updateSum() {
+    var sum = 0;
+    for (var i = 0; i < arguments.length - 1; i++) {
+        var value = parseInt(document.getElementById(arguments[i]).value) || 0;
+        sum += value;
+    }
+    var outputId = arguments[arguments.length - 1];
+    if (sum != 0) {
+        document.getElementById(outputId).value = sum;
+    } else {
+        document.getElementById(outputId).value = "";
+    }
+}
+
+<!-------------------------------------------------------------------------->
+
+function calculateTotal(inputId) {
+    saveToLocalStorage();
+    var sum = 0;
+    var prefix = inputId === 'CONA' ? 'A' : 'BC';
+    var keys = [];
+    if (prefix === 'A') {
+        for (var i = 1; i <= 111; i++) {
+            keys.push("EG" + i.toString().padStart(2, '0') + prefix);
+        }
+    } else {
+        for (var i = 1; i <= 111; i++) {
+            keys.push("EG" + i.toString().padStart(2, '0') + prefix);
+        }
+    }
+    keys.push("EG781" + prefix, "EG782" + prefix, "EG791" + prefix);
+    
+    keys.forEach(function(key) {
+        var value = parseInt(localStorage.getItem(key)) || 0;
+        sum += value;
+    });
+
+    var totalInput = document.getElementById(inputId);
+    if (sum !== 0) {
+        totalInput.value = sum;
+    } else {
+        totalInput.value = '';
+    }
+}
+
+
+<!--------------------------------------------------------------------->
+
+function back() {
+    saveToLocalStorage();
+    window.location.href = 'Chapter 3 - part 3.html';}
+
+<!--------------------------------------------------------------------->
+
+function index() {
+    saveToLocalStorage();
+    window.location.href = 'index.html';}
+
+<!--------------------------------------------------------------------->
+
+function next() {
+    saveToLocalStorage();
+    window.location.href = 'Chapter 3 - part 5.html';}
+
+<!--------------------------------------------------------------------->
+
+    var elements = document.querySelectorAll("[id]");
+    var inputIds = Array.from(elements).map(function(element) {
+        return element.id;
+    });
+    
+<!--------------------------------------------------------------------->
+
+function saveToLocalStorage() {
+    inputIds.forEach(function(id) {
+        localStorage.setItem(id, document.getElementById(id).value);
+    });
+}
+
+<!--------------------------------------------------------------------->
+
+function resetLocalStorage() {
+    localStorage.clear();
+    alert("localStorage has been reset.");
+
+    window.onload();
+}
+
+<!--------------------------------------------------------------------->
+
+window.onload = function() {
+    inputIds.forEach(function(id) {
+        var inputField = document.getElementById(id);
+        inputField.addEventListener('input', function() {
+        	saveToLocalStorage();
+            calculateTotal('CONA');
+            calculateTotal('CONBC');
+        	allMonthly();
+        	allSum();
+        });
+
+        var value = localStorage.getItem(id);
+        if (value !== null) {
+            inputField.value = value;
+        } else {
+            inputField.value = "";
+        }
+    });
+    saveToLocalStorage();
+    calculateTotal('CONA');
+    calculateTotal('CONBC');
+    allMonthly();
+    allSum();
+};
+
+</script>
+
+</body>
+</html>
