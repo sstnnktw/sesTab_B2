@@ -46,16 +46,14 @@
     }
     table th, table td {
         border: 1px solid #f2f2f2;
-        padding: 10px;
+    	font-weight: normal;
         text-align: left;
+        padding: 10px;
     }
     table th {
-    	font-weight: normal;
         background-color: #DEC8EE;
         text-align: center;
         position: sticky;
-        /*top: 0;
-        z-index: 1;*/
     }
     thead {
         position: sticky;
@@ -96,6 +94,10 @@
     	background-color: #F7EEFC;
         text-align: right;
         padding: 20px;
+    }
+   #remark {
+        text-align: center;
+        color: #FF0000;
     }
    #nn {
         padding-left: 30px;
@@ -155,6 +157,9 @@
         color: #FF0000;
         font-size: 15px;
     }
+    .remark {
+        text-align:left;
+    }
     .remarkL {
         padding-left: 15px;
     }
@@ -209,8 +214,10 @@
 
 <div class="chapter">
     <b>ตอนที่ 3 ค่าใช้จ่ายสินค้าและบริการ</b>
-    <br><span class="remark">- ข้อไหนไม่มีค่าใช้จ่ายสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u></span>
-    <br><span class="remark">- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</span>
+    <br><div class="remark">
+    	** remark **
+    	<br>- ข้อไหนไม่มีค่าใช้จ่ายสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u>
+    	<br>- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</div>
 </div>
 
 <div class="nn">
@@ -254,7 +261,7 @@
         
         <tr>
             <td colspan="3"></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
 		</tr>  
        
         <script>
@@ -322,8 +329,8 @@
         
         <tr>
             <td></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
 		</tr>  
         
         <tr>
@@ -370,7 +377,7 @@
                 var itemNames = [
                     "- ค่าเบี้ยประกันภัย/ทรัพย์สิน/ประกันชีวิต<br>&nbsp;&nbsp;&nbsp;(<b>ไม่รวม</b> ประเภทสะสมทรัพย์) เงินฌาปนกิจศพ",
                     "- ค่าเบี้ยประกันสุขภาพ (<b>ไม่รวม</b> ประเภทสะสมทรัพย์)",
-                    "- ค่าเบี้ยประกันสังคม"
+                    "- เงินสมทบประกันสังคม"
                 ];
 
                 for (var i = 0; i < itemCount; i++) {
