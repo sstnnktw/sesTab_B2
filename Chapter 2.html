@@ -24,40 +24,42 @@
     font-size: 20px;
     text-align:center;
   }
-  .head0 {
-    background-color: #d2b3e8;
+  .head0, .head {
     padding: 15px;
     padding-left: 20px;
+  }
+  .head0 { /* HHxx - HHxx */
+    background-color: #d2b3e8;
     font-size: 18px;
   }
-  .head {
+  .head { /* HHxx */
     background-color: #E9DAF4;
-    padding: 15px;
-    padding-left: 20px;
     font-size: 16px;
   }
-  .input {
+  
+/*---------------------------------*/
+
+  .frame {
     padding-left: 40px;
     padding-top: 60px;
     padding-bottom: 60px;
-    font-size: 16px;
   }
-  .input select {
+  select {
     font-size: 16px;
     height: 35px;
     width: 250px;    
   }
-  .input input {
+  input {
     font-size: 16px;
     height: 35px;
     width: 250px;
   }
-  .etc input{
-    font-size: 16px;
-    height: 35px;
-    width: 250px;
+  input.etc  {
     margin-top: 15px;
   }
+  
+/*---------------------------------*/
+  
   .nn {
     background-color: #FFF9E7;
     font-size: 15px;
@@ -65,9 +67,9 @@
     padding-left: 20px;
   } 
   .remark {
+    text-align:left;
     color: #FF0000;
     font-size: 15px;
-    padding-left: 5px;
   }   
   .note {    
     font-size: 18px;
@@ -91,7 +93,7 @@
     width:100%;
     text-align: center;
   }
-.inner{
+  .inner{
     display: inline-block;
   }
 	
@@ -116,19 +118,23 @@
 
 <div class="chapter">
     <b>ตอนที่ 2 ลักษณะที่อยู่อาศัย</b>
-    <br><span class="remark">ข้อที่มี * หมายถึง ต้องมีการบันทึกข้อมูล <u>ปล่อย blank ไม่ได้</u></span>
+    <div class="remark">
+    	** remark **
+    	<br>- ข้อที่มี * หมายถึง ต้องมีการบันทึกข้อมูล <u>ปล่อย blank ไม่ได้</u>
+    </div>
 </div>
 
 <!--------------------------------------------- HH01 : ประเภทที่อยู่อาศัย --------------------------------------------->
 
 <div id="HH01Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH01 : ประเภทที่อยู่อาศัย</b>
   </div>
   
-  <div class="input">
-      <select id="HH01" onchange="Others('HH01');">
+  <div class="frame">
+      <select id="HH01">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - บ้านเดี่ยว</option>
           <option value="2">2 - ห้องแถว/ตึกแถว/อาคารพาณิชย์</option>
@@ -138,24 +144,27 @@
           <option value="6">6 - เพิงพักชั่วคราว</option>
           <option value="7">7 - อื่น ๆ (ระบุ)</option>
       </select>
+      <br><br><span class="remark">ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HH01T" style="display: none;" class="etc">
-          <input id="HH01_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH01_T</span>
+      <div id="HH01T" style="display: none;">
+          <input id="HH01_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH01_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH01Div -->
 
 <!--------------------------------------------- HH02 : ลักษณะที่อยู่อาศัย --------------------------------------------->
 
 <div id="HH02Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH02 : ลักษณะที่อยู่อาศัย</b>
   </div>
   
-  <div class="input">
-      <select id="HH02" onchange="Others('HH02');">
+  <div class="frame">
+      <select id="HH02">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - ตึก</option>
           <option value="2">2 - ไม้</option>
@@ -164,24 +173,27 @@
           <option value="5">5 - ใช้วัสดุที่ใช้แล้ว/วัสดุเหลือใช้ เช่น หีบ ลัง</option>
           <option value="6">6 - อื่น ๆ (ระบุ)</option>
       </select>
+      <br><br><span class="remark">ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HH02T" style="display: none;" class="etc">
-          <input id="HH02_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH02_T</span>
+      <div id="HH02T" style="display: none;">
+          <input id="HH02_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH02_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH02Div -->
 
 <!--------------------------------------------- HH03 : สถานภาพการครอบครองที่อยู่อาศัย --------------------------------------------->
 
 <div id="HH03Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH03 : สถานภาพการครอบครองที่อยู่อาศัย</b>
   </div>
   
-  <div class="input">
-      <select id="HH03" onchange="checkDisability('HH03'); Others('HH03');">
+  <div class="frame">
+      <select id="HH03">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - เป็นเจ้าของบ้านและที่ดิน</option>
           <option value="2">2 - เป็นเจ้าของบ้านแต่เช่าที่ดิน</option>
@@ -193,13 +205,15 @@
           <option value="7">7 - ให้อยู่เปล่า เช่น บ้านญาติ</option>
           <option value="8">8 - อื่น ๆ (ระบุ)</option>
       </select>
+      <br><br><span class="remark">ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HH03T" style="display: none;" class="etc">
-          <input id="HH03_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH03_T</span>
+      <div id="HH03T" style="display: none;">
+          <input id="HH03_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH03_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH03Div -->
 
 <!--------------------------------------------- HH04 : ผู้จ่ายค่าเช่า/ผู้ให้สวัสดิการ/ให้อยู่ฟรี --------------------------------------------->
 
@@ -210,8 +224,8 @@
       <b>HH04 : ผู้จ่ายค่าเช่า/ผู้ให้สวัสดิการ/ให้อยู่ฟรี</b>
   </div>
   
-  <div class="input">
-      <select id="HH04" onchange="checkDisability('HH04'); Others('HH04');">
+  <div class="frame">
+      <select id="HH04">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - จ่ายค่าเช่าเอง</option>
           <option value=".">นายจ้าง</option>
@@ -222,17 +236,20 @@
           <option value="6">6 - ญาติ</option>
           <option value="7">7 - อื่น ๆ เช่น อาศัยผู้อื่น เพื่อน (ระบุ)</option>
       </select>
+      <br><br><span class="remark">ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HH04T" style="display: none;" class="etc">
-          <input id="HH04_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH04_T</span>
+      <div id="HH04T" style="display: none;">
+          <input id="HH04_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH04_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH04Div -->
 
 <!-------------------------------------------- HH05 : ค่าเช่าต่อเดือน -------------------------------------------->
 
 <div id="HH05Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH05 : ค่าเช่าต่อเดือน</b>
@@ -243,31 +260,35 @@
     กรณีเช่าที่ดิน/ที่ดินสาธารณะ ไม่ต้องประเมินค่าที่ดิน
   </div>
   
-  <div class="input">
+  <div class="frame">
       <input id="HH05" type="number">
   </div>
-</div>
+  
+</div> <!-- HH05Div -->
 
 <!-------------------------------------------- HH06 : ใช้ที่อยู่อาศัยนี้บางส่วนทำธุรกิจหรือไม่ -------------------------------------------->
 
 <div id="HH06Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH06 : ใช้ที่อยู่อาศัยนี้บางส่วนทำธุรกิจหรือไม่</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HH06">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่ใช้</option>
           <option value="1">1 - ใช้</option>
       </select>
   </div>
-</div>
+  
+</div> <!-- HH06Div -->
 
 <!-------------------------------------------- HH07 - HH08 : จำนวนห้อง -------------------------------------------->
 
 <div id="HH07-08Div">
+
   <div class="head0">
       <b>HH07 - HH08 : จำนวนห้อง</b>
   </div>
@@ -278,7 +299,7 @@
       <b>HH07 : ห้องที่อยู่อาศัยทั้งหมด</b> (ไม่นับ ห้องน้ำห้องส้วม)
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HH07">
           <option value="">-- ระบุจำนวน --</option>
           <option value="1">1</option>
@@ -299,7 +320,7 @@
       <b>HH08 : จำนวนห้องที่ใช้นอน</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HH08">
           <option value="">-- ระบุจำนวน --</option>
           <option value="1">1</option>
@@ -313,38 +334,39 @@
           <option value="9">9</option>
       </select>
   </div>
-</div>
+  
+</div> <!-- HH07-08Div -->
 
 <!--------------------------------------------- HH09 : ไฟฟ้าภายในที่อยู่อาศัย --------------------------------------------->
 
 <div id="HH09Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH09 : ไฟฟ้าภายในที่อยู่อาศัย</b>
   </div>
-  <div class="nn">
-      (<b>รวม</b> ไฟฟ้าที่ต่อจากแบตเตอรี่และเครื่องกำเนิดไฟฟ้าอื่น ๆ)
-  </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HH09">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่มี</option>
           <option value="1">1 - มี</option>
       </select>
   </div>
-</div>
+  
+</div> <!-- HH09Div -->
 
 <!--------------------------------------------- HH10 : เชื้อเพลิงที่ใช้ในการปรุงอาหาร (ส่วนใหญ่) --------------------------------------------->
 
 <div id="HH10Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH10 : เชื้อเพลิงที่ใช้ในการปรุงอาหาร</b> (ส่วนใหญ่)
   </div>
   
-  <div class="input">
-      <select id="HH10" onchange="Others('HH10');">
+  <div class="frame">
+      <select id="HH10">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่มีการหุงต้ม</option>
           <option value="1">1 - ถ่าน</option>
@@ -355,23 +377,25 @@
           <option value="6">6 - อื่น ๆ (ระบุ)</option>
       </select>
       
-      <div id="HH10T" style="display: none;" class="etc">
-          <input id="HH10_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH10_T</span>
+      <div id="HH10T" style="display: none;">
+          <input id="HH10_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH10_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH10Div -->
 
 <!--------------------------------------------- HH11 : น้ำดื่ม --------------------------------------------->
 
 <div id="HH11Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH11 : น้ำดื่ม</b>
   </div>
   
-  <div class="input">
-      <select id="HH11" onchange="Others('HH11');">
+  <div class="frame">
+      <select id="HH11">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - น้ำดื่มบรรจุขวด/ตู้น้ำดื่มหยอดเหรียญ</option>
           <option value="1">1 - น้ำประปาภายในบ้าน</option>
@@ -384,23 +408,25 @@
           <option value="8">8 - อื่น ๆ (ระบุ)</option>
       </select>
       
-      <div id="HH11T" style="display: none;" class="etc">
-          <input id="HH11_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH11_T</span>
+      <div id="HH11T" style="display: none;">
+          <input id="HH11_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH11_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH11Div -->
 
 <!--------------------------------------------- HH12 : น้ำใช้ --------------------------------------------->
 
 <div id="HH12Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH12 : น้ำใช้</b>
   </div>
   
-  <div class="input">
-      <select id="HH12" onchange="Others('HH12');">
+  <div class="frame">
+      <select id="HH12">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - น้ำประปาภายในบ้าน</option>
           <option value="2">2 - น้ำบ่อ/บาดาลภายในบ้าน</option>
@@ -412,16 +438,18 @@
           <option value="8">8 - อื่น ๆ (ระบุ)</option>
       </select>
       
-      <div id="HH12T" style="display: none;" class="etc">
-          <input id="HH12_T" type="text" placeholder = "ระบุ">
+      <div id="HH12T" style="display: none;">
+          <input id="HH12_T" class="etc" type="text" placeholder = "ระบุ">
           <span class="remark">บันทึกเป็นตัวแปร HH12_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH12Div -->
 
 <!-------------------------------------------- HH13 - HH14 : วิธีกำจัดขยะภายในครัวเรือน -------------------------------------------->
 
 <div id="HH13-14Div">
+
   <div class="head0">
       <b>HH13 - HH14 : วิธีกำจัดขยะภายในครัวเรือน</b>
   </div>
@@ -436,8 +464,8 @@
       <b>HH13 : วิธีที่ 1</b>
   </div>
   
-  <div class="input">
-      <select id="HH13" onchange="Others('HH13');">
+  <div class="frame">
+      <select id="HH13">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - เก็บรวบรวมให้พนักงานนำไปทิ้ง</option>
           <option value="2">2 - เผา</option>
@@ -449,9 +477,9 @@
           <option value="8">8 - อื่น ๆ (ระบุ)</option>
       </select>
       
-      <div id="HH13T" style="display: none;" class="etc">
-          <input id="HH13_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH13_T</span>
+      <div id="HH13T" style="display: none;">
+          <input id="HH13_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH13_T</span>
       </div>
   </div>
 
@@ -460,8 +488,8 @@
       <b>HH14 : วิธีที่ 2</b>
   </div>
   
-  <div class="input">
-      <select id="HH14" onchange="Others('HH14');">
+  <div class="frame">
+      <select id="HH14">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - เก็บรวบรวมให้พนักงานนำไปทิ้ง</option>
           <option value="2">2 - เผา</option>
@@ -473,22 +501,24 @@
           <option value="8">8 - อื่น ๆ (ระบุ)</option>
       </select>
       
-      <div id="HH14T" style="display: none;" class="etc">
-          <input id="HH14_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HH14_T</span>
+      <div id="HH14T" style="display: none;">
+          <input id="HH14_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HH14_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HH13-14Div -->
 
 <!--------------------------------------------- HH15 การใช้ส้วมในครัวเรือน --------------------------------------------->
 
 <div id="HH15Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HH15 การใช้ส้วมในครัวเรือน</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HH15">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่มีส้วม</option>
@@ -498,11 +528,13 @@
           <option value="4">4 - ส้วมหลุม/ส้วมถัง/ส้วมถ่ายลงบ่อปลา/ส้วมถ่ายลงแม่น้ำ ลำคลอง หรือส้วมลักษณะอื่น ๆ (โดยมีห้องกั้น)</option>
       </select>
   </div>
-</div>
+  
+</div> <!-- HH15Div -->
 
 <!-------------------------------------------- HH16 - HH21 : การครอบครองยานพาหนะ -------------------------------------------->
 
 <div id="HH16-21Div">
+
   <div class="head0">
     <b>HH16 - HH21 : การครอบครองยานพาหนะ</b>
     <span style="font-size: 16px;">(ทั้งที่ใช้ในครัวเรือน หรือใช้ทำธุรกิจ)</span>
@@ -519,12 +551,12 @@
 
     <script>
         var components = [
-            { label: 'รถจักรยาน (รวม จักรยานไฟฟ้า)', id: 'HH16' },
-            { label: 'รถจักรยานยนต์', id: 'HH17' },
-            { label: 'รถยนต์ส่วนบุคคล', id: 'HH18' },
-            { label: 'รถบรรทุกเล็ก/รถปิกอัพ/รถตู้', id: 'HH19' },
-            { label: 'รถอีแต๋น/รถอื่น ๆ ประเภทเดียวกัน', id: 'HH20' },
-            { label: 'เรือยนต์', id: 'HH21' }
+            { label: '<b>รถจักรยาน</b> (<b>รวม</b> จักรยานไฟฟ้า)', id: 'HH16' },
+            { label: '<b>รถจักรยานยนต์</b>', id: 'HH17' },
+            { label: '<b>รถยนต์ส่วนบุคคล</b>', id: 'HH18' },
+            { label: '<b>รถบรรทุกเล็ก/รถปิกอัพ/รถตู้</b>', id: 'HH19' },
+            { label: '<b>รถอีแต๋น/รถอื่น ๆ ประเภทเดียวกัน</b>', id: 'HH20' },
+            { label: '<b>เรือยนต์</b>', id: 'HH21' }
         ];
 
         function generateInputElements(components) {
@@ -534,36 +566,36 @@
                 inputsHTML += `
                     <div class="head">
                         <span style="color: #ff0000;"><b>*</b></span>
-                        <b>${component.id} : ${component.label}</b>
+                        <b>${component.id} :</b> ${component.label}
                     </div>
-                    <div class="input">
+                    <div class="frame">
                         <select id="${component.id}">
                             <option value="">-- ระบุจำนวน --</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
+                            ${generateOptions(0, 9)}
                         </select>
                     </div>
                 `;
             });
             container.innerHTML = inputsHTML;
         }
+        
+        function generateOptions(start, end) {
+            var optionsHTML = '';
+            for (var i = start; i <= end; i++) {
+                optionsHTML += `<option value="${i}">${i}</option>`;
+            }
+            return optionsHTML;
+        }
 
         generateInputElements(components);
     </script>
   
-</div>
+</div> <!-- HH1621Div -->
 
 <!-------------------------------------------- HH22 - HH41 : ครัวเรือนเป็นเจ้าของสิ่งของต่าง ๆ ต่อไปนี้หรือไม่ -------------------------------------------->
 
 <div id="HH22-41Div">
+
   <div class="head0">
     <b>HH22 - HH41 : ครัวเรือนเป็นเจ้าของสิ่งของต่าง ๆ ต่อไปนี้หรือไม่</b><br>
 </div>
@@ -608,21 +640,12 @@
                 inputsHTML += `
                     <div class="head">
                         <span style="color: #ff0000;"><b>*</b></span>
-                        <b>${component.id} : ${component.label}</b>
+                        <b>${component.id} :</b> ${component.label}
                     </div>
-                    <div class="input">
+                    <div class="frame">
                         <select id="${component.id}">
                             <option value="">-- ระบุจำนวน --</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
+                            ${generateOptions(0, 9)}
                         </select>
                     </div>
                 `;
@@ -633,41 +656,41 @@
         generateInputElements(components);
 
     </script>
-  
-<!-- HH40 : โทรศัพท์มือถือ ปุ่มกด -->
-  <div class="head">
-  	  <span style="color: #ff0000;"><b>*</b></span>
-      <b>HH40 : โทรศัพท์มือถือ ปุ่มกด</b>
-  </div>
-  
-  <div class="input">
-      <select id="HH40">
-          <option value="">-- ระบุจำนวน --</option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="...">...</option>
-          <option value="30">30</option>
-      </select>
-  </div>
-  
-<!-- HH41 : โทรศัพท์มือถือ สมาร์ทโฟน -->
-  <div class="head">
-  	  <span style="color: #ff0000;"><b>*</b></span>
-      <b>HH41 : โทรศัพท์มือถือ สมาร์ทโฟน</b>
-  </div>
-  
-  <div class="input">
-      <select id="HH41">
-          <option value="">-- ระบุจำนวน --</option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="...">...</option>
-          <option value="30">30</option>
-      </select>
-  </div>
-</div>
+
+<div id="container3"></div>
+
+    <script>
+
+        var components = [
+            { label: '<b>โทรศัพท์มือถือ ปุ่มกด</b>', id: 'HH40' },
+            { label: '<b>โทรศัพท์มือถือ สมาร์ทโฟน</b>', id: 'HH41' }
+        ];
+
+        function generateInputElements(components) {
+            var container = document.getElementById('container3');
+            var inputsHTML = '';
+            components.forEach(function(component) {
+                inputsHTML += `
+                    <div class="head">
+                        <span style="color: #ff0000;"><b>*</b></span>
+                        <b>${component.id} :</b> ${component.label}
+                    </div>
+                    <div class="frame">
+                        <select id="${component.id}">
+                            <option value="">-- ระบุจำนวน --</option>
+                            ${generateOptions(0, 30)}
+                        </select>
+                    </div>
+                `;
+            });
+            container.innerHTML = inputsHTML;
+        }
+
+        generateInputElements(components);
+
+    </script>
+    
+</div> <!-- HH22-41Div -->
 
 <!-------------------------------------------- HH42 : จำนวนสมาชิกที่มีการใช้อินเทอร์เน็ต (ในรอบ 12 เดือนที่แล้ว) -------------------------------------------->
 
@@ -683,18 +706,29 @@
     (ถ้าไม่มี บันทึก "00")
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HH42">
           <option value="">-- ระบุจำนวน --</option>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
-          <option value="...">...</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
           <option value="15">15</option>
       </select>
   </div>
+  
 </div>
-
 
 <!-------------------------------------------- NOTE -------------------------------------------->
 
@@ -825,7 +859,6 @@ function checkDisability(input) {
         selectElement.value = "";
     }
 }
-
     
 <!--------------------------------------------------------------------->
     
@@ -873,6 +906,7 @@ window.onload = function() {
         var inputField = document.getElementById(id);
         inputField.addEventListener('input', function() {
         saveToLocalStorage();
+        allF();
         
         });
 
