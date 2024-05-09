@@ -69,17 +69,15 @@
         font-size: 16px;
     }
     table th, table td {
+    	font-weight: normal;
+        text-align: left;
         border: 1px solid #f2f2f2;
         padding: 10px;
-        text-align: left;
     }
     table th {
-    	font-weight: normal;
         background-color: #DEC8EE;
         text-align: center;
         position: sticky;
-        /*top: 0;
-        z-index: 1;*/
     }
     
     .table2 {
@@ -127,6 +125,10 @@
     	background-color: #F7EEFC;
         text-align: right;
         padding: 20px;
+    }
+   #remark {
+        text-align: center;
+        color: #FF0000;
     }
    #nn {
         padding-left: 30px;
@@ -183,9 +185,9 @@
         padding-left: 50px;
     }
     .remark {
+        text-align:left;
         color: #FF0000;
         font-size: 15px;
-        padding-left: 5px;
     }
     .note {    
         font-size: 18px;
@@ -235,8 +237,10 @@
 
 <div class="chapter">
     <b>ตอนที่ 3 ค่าใช้จ่ายสินค้าและบริการ</b>
-    <br><span class="remark">- ข้อที่มี * หมายถึง ต้องมีการบันทึกข้อมูล <u>ปล่อย blank ไม่ได้</u></span>
-    <br><span class="remark">- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</span>
+    <div class="remark">
+    	** remark **
+    	<br>- ข้อที่มี * หมายถึง ต้องมีการบันทึกข้อมูล <u>ปล่อย blank ไม่ได้</u>
+    	<br>- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</div>
 </div>
 
 <div class="headABC">
@@ -330,6 +334,11 @@
         </tr>
         
 <!------------------------------------------------------------->
+
+		<tr>
+            <td colspan="3"></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
+		</tr> 
        
         <script>
         
