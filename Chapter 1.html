@@ -6,6 +6,7 @@
 <title>SES Chapter 1</title>
 
 <style>
+
   body {
     font-family: Arial, sans-serif;
     background-color: #fff;
@@ -23,40 +24,42 @@
     font-size: 20px;
     text-align:center;
   }
-  .head0 {
-    background-color: #d2b3e8;
+  .head0, .head {
     padding: 15px;
     padding-left: 20px;
+  }
+  .head0 { /* HMxx - HMxx */
+    background-color: #d2b3e8;
     font-size: 18px;
   }
-  .head {
+  .head { /* HMxx */
     background-color: #E9DAF4;
-    padding: 15px;
-    padding-left: 20px;
     font-size: 16px;
   }
-  .input {
+  
+/*---------------------------------*/
+
+  .frame {
     padding-left: 40px;
     padding-top: 60px;
     padding-bottom: 60px;
-    font-size: 16px;
   }
-  .input select {
+  select {
     height: 35px;
     width: 250px;  
     font-size: 16px;  
   }
-  .input input {
+  input {
     height: 35px;
     width: 250px;
     font-size: 16px;
   }
-  .etc input{
-    font-size: 16px;
-    height: 35px;
-    width: 250px;
+  input.etc {
     margin-top: 15px;
   }
+  
+/*---------------------------------*/
+  
   .nn {
     background-color: #FFF9E7;
     font-size: 15px;
@@ -67,6 +70,7 @@
     color: #FF0000;
     font-size: 15px;
     padding-left: 5px;
+    text-align: left;
   }  
   .note {    
     font-size: 18px;
@@ -90,7 +94,7 @@
     width:100%;
     text-align: center;
   }
-.inner{
+  .inner{
     display: inline-block;
   }
 	
@@ -115,7 +119,10 @@
 
 <div class="chapter">
     <b>ตอนที่ 1 สมาชิกของครัวเรือน</b>
-    <br><span class="remark">ข้อที่มี * หมายถึง ต้องมีการบันทึกข้อมูล <u>ปล่อย blank ไม่ได้</u></span>
+    <div class="remark">
+    	** remark **
+    	<br>- ข้อที่มี * หมายถึง ต้องมีการบันทึกข้อมูล <u>ปล่อย blank ไม่ได้</u>
+    </div>
 </div>
 
 <!--------------------------------------------- HM01N1 : คำนำหน้าชื่อ --------------------------------------------->
@@ -126,8 +133,8 @@
       <b>HM01N1 : คำนำหน้าชื่อ</b>
   </div>
   
-  <div class="input">
-      <select id="HM01N1" onchange="updateGender(); Others('HM01N1');">
+  <div class="frame">
+      <select id="HM01N1">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - นาย</option>
           <option value="2">2 - นาง</option>
@@ -136,15 +143,17 @@
           <option value="5">5 - เด็กหญิง</option>
           <option value="6">6 - อื่น ๆ (ระบุ)</option>
       </select>
+      <br><br><span class="remark">ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HM01N1T" style="display: none;" class="etc">
-          <input id="HM01N1_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HM01N1_T</span>
+      <div id="HM01N1T" style="display: none;">
+          <input id="HM01N1_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HM01N1_T</span>
       </div>
       <br><br><span class="remark">ถ้า HM01N1 = 1 - 5 → เพศ(HM03) เปลี่ยนตามคำนำหน้าชื่อ (auto)</span>
       <br><span class="remark">ถ้า HM01N1 = 6 → แสดงตัวเลือกของ HM03 ให้เลือก</span>
-  </div>
-</div>
+  </div> <!-- frame -->
+  
+</div> <!-- HM01N1Div -->
 
 <!----------------------------->
 
@@ -174,7 +183,6 @@
     }
 </script>
 
-
 <!--------------------------------------------- HM01N2 : ชื่อ --------------------------------------------->
 
 <div id="HM01N2Div">
@@ -184,10 +192,11 @@
       <b>HM01N2 : ชื่อ</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <input id="HM01N2" type="text">
   </div>
-</div>
+  
+</div> <!-- HM01N2Div -->
 
 <!--------------------------------------------- HM01N3 : นามสกุล --------------------------------------------->
 
@@ -198,20 +207,21 @@
       <b>HM01N3 : นามสกุล</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <input id="HM01N3" type="text">
   </div>
-</div>
+</div> <!-- HM01N3Div -->
 
 <!--------------------------------------------- HM02 : ความสัมพันธ์กับหัวหน้าครัวเรือน --------------------------------------------->
 
 <div id="HM02Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM02 : ความสัมพันธ์กับหัวหน้าครัวเรือน</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM02">
           <option value="">-- กรุณาเลือก --</option>
           <option value="01">01 - หัวหน้าครัวเรือน</option>
@@ -231,31 +241,36 @@
       </select>
       <br><br><span class="remark">ถ้า HM01 = 1 → HM02 = 1 (แก้ไขไม่ได้)</span>
       <br><span class="remark">ถ้า HM01 != 1 → แสดงตัวเลือก 2-13, 00</span>
-  </div>
-</div>
+  </div> <!-- frame -->
+  
+</div> <!-- HM01N1Div -->
 
 <!-- ------------------------------------------- HM03 : เพศ --------------------------------------------->
 
 <div id="HM03Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM03 : เพศ</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM03">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - ชาย</option>
           <option value="2">2 - หญิง</option>
       </select>
+      
       <br><br><span class="remark">ถ้า HM01_1N = 1 - 6 → เพศ(HM03) เปลี่ยนตามคำนำหน้าชื่อ (auto)</span>
       <br><span class="remark">ถ้า HM01_1N = 6 → แสดงตัวเลือกของ HM03 ให้เลือก</span>
   </div>
-</div>
+  
+</div> <!-- HM03Div -->
 
 <!--------------------------------------------- HM04 : อายุ --------------------------------------------->
 
 <div id="HM04Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM04 : อายุนับถึงวันเกิดครั้งสุดท้าย</b>
@@ -266,10 +281,11 @@
       กรณีที่อายุมากกว่า 120 ปี บันทึก "120"
   </div>
   
-  <div class="input">
-    <input id="HM04" type="number" oninput="checkAge('HM04');">
+  <div class="frame">
+    <input id="HM04" type="number">
   </div>
-</div>
+  
+</div> <!-- HM04Div -->
 
 <!----------------------------->
 
@@ -279,7 +295,7 @@
 
         var age = document.getElementById(fieldId).value;
         var HM10Div = document.getElementById('HM10Div');
-        if (age < 15) {
+        if (age > 0 && age < 15) {
             HM10Div.style.display = 'none';
         } else {
             HM10Div.style.display = 'block';
@@ -312,36 +328,40 @@
 <!--------------------------------------------- HM05 : ศาสนา --------------------------------------------->
 
 <div id="HM05Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM05 : ศาสนา</b>
   </div>
   
-  <div class="input">
-      <select id="HM05" onchange="Others('HM05');">
+  <div class="frame">
+      <select id="HM05">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - พุทธ</option>
           <option value="2">2 - อิสลาม</option>
           <option value="3">3 - คริสต์</option>
           <option value="4">4 - อื่น ๆ (ระบุ)</option>
       </select>
+      <br><br><span class="remark">ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HM05T" style="display: none;" class="etc">
-          <input id="HM05_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HM05_T</span>
+      <div id="HM05T" style="display: none;">
+          <input id="HM05_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HM05_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HM05Div -->
 
 <!--------------------------------------------- HM06 : ภาษาส่วนใหญ่ที่ใช้คุย --------------------------------------------->
 
 <div id="HM06Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM06 : ภาษาส่วนใหญ่ที่ใช้คุยกับสมาชิกในครัวเรือน</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM06" onchange="Others('HM06');">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - ไทย</option>
@@ -352,23 +372,26 @@
           <option value="6">6 - กะเหรี่ยง</option>
           <option value="7">7 - อื่น ๆ (ระบุ)</option>
       </select>
+      <br><br><span class="remark">ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HM06T" style="display: none;" class="etc">
-          <input id="HM06_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HM06_T</span>
+      <div id="HM06T" style="display: none;">
+          <input id="HM06_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HM06_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HM06Div -->
 
 <!--------------------------------------------- HM07 : สัญชาติ --------------------------------------------->
 
 <div id="HM07Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM07 : สัญชาติ</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM07">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่มีสัญชาติ</option>
@@ -376,18 +399,20 @@
           <option value="2">2 - ไม่ใช่สัญชาติไทย</option>
       </select>
   </div>
-</div>
+  
+</div> <!-- HM07Div -->
 
 <!--------------------------------------------- HM08 : เป็นผู้พิการหรือไม่ --------------------------------------------->
 
 <div id="HM08Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM08 : เป็นผู้พิการหรือไม่</b>
   </div>
   
-  <div class="input">
-      <select id="HM08" onchange="checkDisability('HM08');">
+  <div class="frame">
+      <select id="HM08">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่พิการ</option>
           <option value=".">พิการแต่กำเนิด</option>
@@ -400,34 +425,38 @@
           <option value="6">6 - ทั้งร่างกายและสติปัญญา</option>
       </select>
   </div>
-</div>
+  
+</div> <!-- HM08Div -->
 
 <!--------------------------------------------- HM09 : สามารถดูแลตนเองได้หรือไม่ --------------------------------------------->
 
 <div id="HM09Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM09 : สามารถดูแลตนเอง</b> (ในชีวิตประจำวัน) <b>โดยไม่ต้องมีคนช่วยเหลือได้หรือไม่</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM09">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่ได้</option>
           <option value="1">1 - ได้</option>
       </select>
   </div>
-</div>
+  
+</div> <!-- HM09Div -->
 
 <!--------------------------------------------- HM10 : สถานภาพสมรส --------------------------------------------->
 
 <div id="HM10Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM10 : สถานภาพสมรส</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM10">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - โสด</option>
@@ -436,20 +465,22 @@
           <option value="4">4 - หย่า</option>
           <option value="5">5 - แยกกันอยู่</option>
       </select>
-          <span class="remark">ถามเฉพาะสมาชิกที่มีอายุ 15 ปีขึ้นไป</span>
+      <br><br><span class="remark">ถามเฉพาะสมาชิกที่มีอายุ 15 ปีขึ้นไป</span>
   </div>
-</div>
+  
+</div> <!-- HM10Div -->
 
 <!--------------------------------------------- HM11 : มีพ่อแม่อาศัยอยู่ด้วยหรือไม่ --------------------------------------------->
 
 <div id="HM11Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM11 : มีพ่อแม่อาศัยอยู่ด้วยหรือไม่</b>
   </div>
   
-  <div class="input">
-      <select id="HM11" onchange="Others('HM11');">
+  <div class="frame">
+      <select id="HM11">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - อยู่</option>
           <option value="2">2 - อยู่กับพ่อคนเดียว</option>
@@ -457,28 +488,32 @@
           <option value="4">4 - อยู่กับญาติ</option>
           <option value="5">5 - อยู่กับคนอื่น (ระบุ)</option>
       </select>
-          <span class="remark">ถามเฉพาะสมาชิกที่มีอายุต่ำกว่า 15 ปี</span>
+      <br><br><span class="remark">- ถามเฉพาะสมาชิกที่มีอายุต่ำกว่า 15 ปี</span>
+      <br><span class="remark">- ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HM11T" style="display: none;" class="etc">
-          <input id="HM11_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HM11_T</span>
+      <div id="HM11T" style="display: none;">
+          <input id="HM11_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HM11_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HM11Div -->
 
 <!--------------------------------------------- HM12 : จำนวนปีที่ไม่ได้อยู่กับพ่อ และ/หรือ แม่ --------------------------------------------->
 
 <div id="HM12Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM12 : จำนวนปีที่ไม่ได้อยู่กับพ่อ และ/หรือ แม่</b>
   </div>
   
-  <div class="input">
-      <input id="HM12" type="number" oninput="checkHM12(this);">
-      <span class="remark">ถามเฉพาะสมาชิกที่มีอายุต่ำกว่า 15 ปี</span>
+  <div class="frame">
+      <input id="HM12" type="number">
+      <br><br><span class="remark">ถามเฉพาะสมาชิกที่มีอายุต่ำกว่า 15 ปี</span>
   </div>
-</div>
+  
+</div> <!-- HM12Div -->
 
 <!----------------------------->
 
@@ -494,13 +529,14 @@
 <!--------------------------------------------- HM13 : สาเหตุที่ไม่ได้อยู่กับพ่อ และ/หรือ แม่ --------------------------------------------->
 
 <div id="HM13Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM13 : สาเหตุที่ไม่ได้อยู่กับพ่อ และ/หรือ แม่</b>
   </div>
   
-  <div class="input">
-      <select id="HM13" onchange="Others('HM13');">
+  <div class="frame">
+      <select id="HM13">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - พ่อและ/หรือแม่ เสียชีวิต</option>
           <option value="2">2 - พ่อแม่แยกทางกัน</option>
@@ -509,34 +545,38 @@
           <option value="5">5 - เพื่อการศึกษา</option>
           <option value="6">6 - อื่น ๆ (ระบุ)</option>
       </select>
-          <span class="remark">ถามเฉพาะสมาชิกที่มีอายุต่ำกว่า 15 ปี</span>
+      <br><span class="remark">- ถามเฉพาะสมาชิกที่มีอายุต่ำกว่า 15 ปี</span>
+      <br><span class="remark">- ถ้าเลือกอื่น ๆ ให้ระบุเพิ่ม</span>
       
-      <div id="HM13T" style="display: none;" class="etc">
-          <input id="HM13_T" type="text" placeholder = "ระบุ">
-          <span class="remark">บันทึกเป็นตัวแปร HM13_T</span>
+      <div id="HM13T" style="display: none;">
+          <input id="HM13_T" class="etc" type="text" placeholder = "ระบุ">
+          <br><br><span class="remark">บันทึกเป็นตัวแปร HM13_T</span>
       </div>
   </div>
-</div>
+  
+</div> <!-- HM13Div -->
 
 <!--------------------------------------------- HM14 : ขณะนี้กำลังเรียนหนังสืออยู่หรือไม่ --------------------------------------------->
 
 <div id="HM14Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM14 : ขณะนี้กำลังเรียนหนังสืออยู่หรือไม่</b>
   </div>
   
-  <div class="input">
-      <select id="HM14" onchange="checkHM14AndToggle('HM14');">
+  <div class="frame">
+      <select id="HM14">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่เคยเรียน</option>
           <option value="1">1 - เรียนอยู่ในสถานศึกษาเอกชน</option>
           <option value="2">2 - เรียนอยู่ในสถานศึกษารัฐบาล</option>
           <option value="3">3 - ไม่เรียนแล้ว</option>
       </select>
-          <span class="remark">ถ้า HM14 = 0 → ข้ามไปถาม HM22</span>
+      <br><br><span class="remark">ถ้า HM14 = 0 → ข้ามไปถาม HM22</span>
   </div>
-</div>
+  
+</div> <!-- HM14Div -->
 
 <!----------------------------->
 
@@ -573,20 +613,23 @@
 <!--------------------------------------------- HM15 : ชั้นสูงสุดที่เรียนจบ --------------------------------------------->
 
 <div id="HM15Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM15 : ชั้นสูงสุดที่เรียนจบ</b>
   </div>
   
-  <div class="input">
-      <input id="HM15" type="text" style="color: #BFBFBF;" placeholder="  Search">
+  <div class="frame">
+      <input id="HM15" type="text" style="color: #BFBFBF;" placeholder=" Search คำหรือรหัสได้">
       <img src="https://icon-library.com/images/search-flat-icon/search-flat-icon-9.jpg" width="25" height="25" style="position: relative; left: 10px; top: 8px;">
   </div>
-</div>
+  
+</div> <!-- HM15Div -->
 
 <!--------------------------------------------- HM16 : สาขาของ HM15 (ถ้ามี) --------------------------------------------->
 
 <div id="HM16Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM16 : สาขาของ HM15 (ถ้ามี)</b>
@@ -597,30 +640,34 @@
       (อนุปริญญา ไม่บันทึกสาขา)
   </div>
   
-  <div class="input">
-      <input id="HM16" type="text" style="color: #BFBFBF;" placeholder="  Search">
+  <div class="frame">
+      <input id="HM16" type="text" style="color: #BFBFBF;" placeholder=" Search คำหรือรหัสได้">
       <img src="https://icon-library.com/images/search-flat-icon/search-flat-icon-9.jpg" width="25" height="25" style="position: relative; left: 10px; top: 8px;">
   </div>
-</div>
+  
+</div> <!-- HM16Div -->
 
 <!--------------------------------------------- HM17 : ชั้นที่กำลังเรียน --------------------------------------------->
 
 <div id="HM17Div">
+
   <div class="head">
   	  <span style="color: #ff0000;"><b>*</b></span>
       <b>HM17 : ชั้นที่กำลังเรียน</b>
   </div>
   
-  <div class="input">
-      <input id="HM17" type="text" style="color: #BFBFBF;" placeholder="  Search">
+  <div class="frame">
+      <input id="HM17" type="text" style="color: #BFBFBF;" placeholder=" Search คำหรือรหัสได้">
       <img src="https://icon-library.com/images/search-flat-icon/search-flat-icon-9.jpg" width="25" height="25" style="position: relative; left: 10px; top: 8px;">
-      <span class="remark" style="margin-left: 20px;">ถามเฉพาะสมาชิกที่ HM14 = 1 หรือ 2</span>
+      <br><span class="remark">ถามเฉพาะสมาชิกที่ HM14 = 1 หรือ 2</span>
   </div>
-</div>
+  
+</div> <!-- HM17Div -->
 
 <!-------------------------------------------- HM18-21 : ค่าใช้จ่ายด้านการศึกษา -------------------------------------------->
 
 <div id="HM18-21Div">
+
   <div class="head0">
       <b>ค่าใช้จ่ายด้านการศึกษา</b>
       <span style="font-size: 16px;">(ตลอดปีการศึกษาที่ผ่านมา)</span>
@@ -630,44 +677,38 @@
   <div class="nn">
       (ถ้าไม่ได้จ่ายเองให้ประเมินมูลค่า <b>ยกเว้น</b>นโยบายเรียนฟรี 15 ปี ไม่ต้องประเมิน)
   </div>
+  
+    <div id="container"></div>
 
-<!-- HM18 : ค่าเล่าเรียน/ค่าธรรมเนียมการศึกษา/ค่าบำรุงการศึกษา -->
-  <div class="head">
-      <b>HM18 : ค่าเล่าเรียน/ค่าธรรมเนียมการศึกษา/ค่าบำรุงการศึกษา</b>
-  </div>
-  
-  <div class="input">
-      <input id="HM18" type="number">
-  </div>
+    <script>
+        var components = [
+            { item: '<b>ค่าเล่าเรียน/ค่าธรรมเนียมการศึกษา/ค่าบำรุงการศึกษา</b>', id: 'HM18' },
+            { item: '<b>ค่าเครื่องแบบ</b> (ทุกประเภทที่กำหนด)', id: 'HM19' },
+            { item: '<b>ค่าสมุดหนังสือ/อุปกรณ์การเรียนอื่น ๆ</b>', id: 'HM20' },
+            { item: '<b>ค่าเดินทางไปเรียน</b>', id: 'HM21' }
+        ];
 
-<!-- HM19 : ค่าเครื่องแบบ (ทุกประเภทที่กำหนด) -->
-  <div class="head">
-      <b>HM19 : ค่าเครื่องแบบ</b> (ทุกประเภทที่กำหนด)
-  </div>
-  
-  <div class="input">
-      <input id="HM19" type="number">
-  </div>
+        function generateInputElements(components) {
+            var container = document.getElementById('container');
+            var inputsHTML = '';
+            components.forEach(function(component) {
+                inputsHTML += `
+                    <div class="head">
+                        <span style="color: #ff0000;"><b>*</b></span>
+                        <b>${component.id} :</b> ${component.item}
+                    </div>
+                    <div class="frame">
+                        <input id="${component.id}" type="number">
+                    </div>
+                `;
+            });
+            container.innerHTML = inputsHTML;
+        }
 
-<!-- HM20 : ค่าสมุดหนังสือ/อุปกรณ์การเรียนอื่น ๆ -->
-  <div class="head">
-      <b>HM20 : ค่าสมุดหนังสือ/อุปกรณ์การเรียนอื่น ๆ</b>
-  </div>
+        generateInputElements(components);
+    </script>
   
-  <div class="input">
-      <input id="HM20" type="number">
-  </div>
-
-<!-- HM21 : ค่าเดินทางไปเรียน -->
-  <div class="head">
-      <b>HM21 : ค่าเดินทางไปเรียน</b>
-  </div>
-  
-  <div class="input">
-      <input id="HM21" type="number">
-  </div>
-  
-</div>
+</div> <!-- HM18-21Div -->
 
 <!-------------------------------------------- HM22 - HM28 : สวัสดิการด้านการรักษาพยาบาลและ/หรือสวัสดิการอื่น ๆ -------------------------------------------->
 
@@ -676,326 +717,122 @@
       <span style="font-size: 16px;">(ปัจจุบัน)</span>
       <b>มีสวัสดิการสวัสดิการด้านการรักษาพยาบาลและ/หรือสวัสดิการอื่น ๆ ต่อไปนี้หรือไม่</b>
   </div>
+  
+    <div id="container2"></div>
 
-<!-- HM22 : สิทธิเบิกค่ารักษาพยาบาลจากหน่วยงานราชการ/รัฐวิสาหกิจ -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM22 : สิทธิเบิกค่ารักษาพยาบาลจากหน่วยงานราชการ/รัฐวิสาหกิจ</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM22">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่มี</option>
-          <option value="1">1 - มี</option>
-      </select>
-  </div>
+    <script>
+        var components = [
+            { item: '<b>สิทธิเบิกค่ารักษาพยาบาลจากหน่วยงานราชการ/รัฐวิสาหกิจ</b>', id: 'HM22' },
+            { item: '<b>สิทธิประกันสุขภาพถ้วนหน้า</b> (บัตรทอง)', id: 'HM23' },
+            { item: '<b>สิทธิประกันสังคม ม.33, 39</b> (ลูกจ้าง/ผู้ประกันตน)', id: 'HM24' },
+            { item: '<b>สิทธิประกันสังคม ม.40</b> (ผู้ประกอบอาชีพอิสระหรือแรงงานนอกระบบ)', id: 'HM25' },
+            { item: '<b>ประกันสุขภาพเอกชน</b>', id: 'HM26' },
+            { item: '<b>สวัสดิการค่ารักษาพยาบาลจัดโดยนายจ้าง</b>', id: 'HM27' },
+            { item: '<b>สวัสดิการค่ารักษาพยาบาลอื่น ๆ เช่น สวัสดิการครูเอกชน สวัสดิการค่ารักษาของนักเรียน ฯลฯ</b> (ระบุ)', id: 'HM28' }
+        ];
 
-<!-- HM23 : สิทธิประกันสุขภาพถ้วนหน้า (บัตรทอง) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM23 : สิทธิประกันสุขภาพถ้วนหน้า</b> (บัตรทอง)
-  </div>
-  
-  <div class="input">
-      <select id="HM23">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่มี</option>
-          <option value="1">1 - มี</option>
-      </select>
-  </div>
+        function generateInputElements(components) {
+            var container = document.getElementById('container2');
+            var inputsHTML = '';
+            components.forEach(function(component) {
+                inputsHTML += `
+                    <div class="head">
+                        <span style="color: #ff0000;"><b>*</b></span>
+                        <b>${component.id} :</b> ${component.item}
+                    </div>
+                    <div class="frame">
+                        <select id="${component.id}">
+                            <option value="">-- กรุณาเลือก --</option>
+                            <option value="0">0 - ไม่มี</option>
+                            <option value="1">1 - มี</option>
+                        </select>
+                `;
+                if (component.id === 'HM28') {
+                    inputsHTML += `
+                        <div id="HM28T" style="display: none;">
+                            <input id="HM28_T" class="etc" type="text" placeholder="ระบุสวัสดิการที่ได้รับ">
+                            <br><br><span class="remark">บันทึกเป็นตัวแปร HM28_T</span>
+                        </div>
+                    `;
+                }
+                inputsHTML += `
+                    </div>
+                `;
+            });
+            container.innerHTML = inputsHTML;
+        }
 
-<!-- HM24 : สิทธิประกันสังคม ม.33, 39 (ลูกจ้าง/ผู้ประกันตน) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM24 : สิทธิประกันสังคม ม.33, 39</b> (ลูกจ้าง/ผู้ประกันตน)
-  </div>
-  
-  <div class="input">
-      <select id="HM24">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่มี</option>
-          <option value="1">1 - มี</option>
-      </select>
-  </div>
-
-<!-- HM25 : สิทธิประกันสังคม ม.40 (ผู้ประกอบอาชีพอิสระหรือแรงงานนอกระบบ) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM25 : สิทธิประกันสังคม ม.40</b> (ผู้ประกอบอาชีพอิสระหรือแรงงานนอกระบบ)
-  </div>
-  
-  <div class="input">
-      <select id="HM25">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่มี</option>
-          <option value="1">1 - มี</option>
-      </select>
-  </div>
-
-<!-- HM26 : ประกันสุขภาพเอกชน -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM26 : ประกันสุขภาพเอกชน</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM26">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่มี</option>
-          <option value="1">1 - มี</option>
-      </select>
-  </div>
-
-<!-- HM27 : สวัสดิการค่ารักษาพยาบาลจัดโดยนายจ้าง -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM27 : สวัสดิการค่ารักษาพยาบาลจัดโดยนายจ้าง</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM27">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่มี</option>
-          <option value="1">1 - มี</option>
-      </select>
-  </div>
-
-<!-- HM28 : สวัสดิการค่ารักษาพยาบาลอื่น ๆ เช่น สวัสดิการครูเอกชน สวัสดิการค่ารักษาของนักเรียน ฯลฯ (ระบุ) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM28 : สวัสดิการค่ารักษาพยาบาลอื่น ๆ เช่น สวัสดิการครูเอกชน สวัสดิการค่ารักษาของนักเรียน ฯลฯ</b> (ระบุ)
-  </div>
-  
-  <div class="input">
-      <select id="HM28" onchange="Others('HM28');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่มี</option>
-          <option value="1">1 - มี</option>
-      </select>
-      
-      <div id="HM28T" style="display: none;" class="etc">
-          <input id="HM28_T" type="text" placeholder = "ระบุสวัสดิการที่ได้รับ">
-      	  <span class="remark">บันทึกเป็นตัวแปร HM28_T</span>
-      </div>
-  </div>
-  
-</div>
+        generateInputElements(components);
+    </script>
+    
+</div> <!-- HM22-28Div -->
 
 <!-------------------------------------------- HM29 - HM36 : โครงการช่วยเหลือของรัฐ -------------------------------------------->
 
 <div id="HM29-36Div">
+
   <div class="head0">
       <span style="font-size: 16px;">(ในรอบ 12 เดือนที่แล้ว)</span> <b>ได้รับผลประโยชน์</b>
       <span style="font-size: 16px;">(ไม่ต้องคืน)</span>
       <b>จากโครงการช่วยเหลือต่อไปนี้หรือไม่</b>
-      <br><span style="color: #ff0000;"><b>dropdown ต้องเลือกคำตอบทุกข้อ แต่จำนวนสามารถปล่อย blank ได้ (หลังบ้านบันทึกค่าเป็น blank)</b></span>
-  </div>
-
-<!-- HM29 : เงินสงเคราะห์เพื่อการยังชีพสำหรับผู้สูงอายุ -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM29 : เงินสงเคราะห์เพื่อการยังชีพสำหรับผู้สูงอายุ</b>
+      <br><span style="color: #ff0000;"><b>dropdown ต้องเลือกคำตอบทุกข้อ แต่จำนวนเงิน/มูลค่า สามารถปล่อย blank ได้ (หลังบ้านบันทึกค่าเป็น blank)</b></span>
   </div>
   
-  <div class="input">
-      <select id="HM29" onchange="checkAndToggle('HM29', 'HM_IN08_1Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
-      
-      <div id="HM_IN08_1Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN08_1" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN08_1 (เก็บไว้เป็น default ของ IN08_1 ใน สศส.3)</span>
-      </div>
-  </div>
+  <div id="container3"></div>
 
-<!-- HM30 : เงินสงเคราะห์สำหรับผู้พิการ -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM30 : เงินสงเคราะห์สำหรับผู้พิการ</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM30" onchange="checkAndToggle('HM30', 'HM_IN08_2Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
-      
-      <div id="HM_IN08_2Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN08_2" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN08_2 (เก็บไว้เป็น default ของ IN08_2 ใน สศส.3)</span>
-      </div>
-  </div>
+  <script>
+      var components = [
+          { item: '<b>เงินสงเคราะห์เพื่อการยังชีพสำหรับผู้สูงอายุ</b>', id: 'HM29', in: 'HM_IN08_1' },
+          { item: '<b>เงินสงเคราะห์สำหรับผู้พิการ</b>', id: 'HM30', in: 'HM_IN08_2' },
+          { item: '<b>อาหารกลางวัน/อาหารเสริมฟรี (นม) สำหรับนักเรียน</b>', id: 'HM31', in: 'HM_IN08_3' },
+          { item: '<b>ทุนการศึกษาจากรัฐ</b>', id: 'HM32', in: 'HM_IN09' },
+          { item: '<b>บัตรสวัสดิการแห่งรัฐ</b> (ผู้มีรายได้น้อย)', id: 'HM33', in: 'HM_IN08_4' },
+          { item: '<b>เงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิดจนถึงอายุ 6 ปี</b> (พม.)', id: 'HM34', in: 'HM_IN08_5' },
+          { item: '<b>เงินสงเคราะห์บุตรแรกเกิดจนถึงอายุ 6 ปี</b> (ประกันสังคม)', id: 'HM35', in: 'HM_IN15' },
+          { item: '<b>โครงการช่วยเหลือของรัฐอื่น ๆ</b> (เช่น โครงการเราเที่ยวด้วยกัน โครงการช่วยเหลือเกษตรกร ฯลฯ)', id: 'HM36', in: 'HM_IN08_6' }
+      ];
 
-<!-- HM31 : อาหารกลางวัน/อาหารเสริมฟรี (นม) สำหรับนักเรียน -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM31 : อาหารกลางวัน/อาหารเสริมฟรี (นม) สำหรับนักเรียน</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM31" onchange="checkAndToggle('HM31', 'HM_IN08_3Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
-      
-      <div id="HM_IN08_3Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN08_3" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN08_3 (เก็บไว้เป็น default ของ IN08_3 ใน สศส.3)</span>
-      </div>
-  </div>
+      function generateInputElements(components) {
+          var container = document.getElementById('container3');
+          var inputsHTML = '';
+          components.forEach(function(component) {
+              inputsHTML += `
+                  <div class="head">
+                      <span style="color: #ff0000;"><b>*</b></span>
+                      <b>${component.id} :</b> ${component.item}
+                  </div>
+                  <div class="frame">
+                      <select id="${component.id}">
+                          <option value="">-- กรุณาเลือก --</option>
+                          <option value="0">0 - ไม่ได้</option>
+                          <option value="1">1 - ได้รับ 1 ปี</option>
+                          <option value="2">2 - ได้รับ 2 ปี</option>
+                          <option value="3">3 - ได้รับ 3 ปี</option>
+                          <option value="4">4 - ได้รับ 4 ปี</option>
+                          <option value="5">5 - ได้รับ 5 ปี</option>
+                      </select>
 
-<!-- HM32 : ทุนการศึกษาจากรัฐ -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM32 : ทุนการศึกษาจากรัฐ</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM32" onchange="checkAndToggle('HM32', 'HM_IN09Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
-      
-      <div id="HM_IN09Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN09" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN09 (เก็บไว้เป็น default ของ IN09 ใน สศส.3)</span>
-      </div>
-  </div>
+                      <div id="${component.in}Div" style="display: none;">
+                          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
+                          <input id="${component.in}" class="etc" type="number">
+                          <br><br><span class="remark">บันทึกเป็นตัวแปร ${component.in} (เก็บไว้เป็น default ของ ${component.in} ใน สศส.3)</span>
+                      </div>
+                  </div>
+              `;
+          });
+          container.innerHTML = inputsHTML;
+      }
 
-<!-- HM33 : บัตรสวัสดิการแห่งรัฐ (ผู้มีรายได้น้อย) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM33 : บัตรสวัสดิการแห่งรัฐ</b> (ผู้มีรายได้น้อย)
-  </div>
-  
-  <div class="input">
-      <select id="HM33" onchange="checkAndToggle('HM33', 'HM_IN08_4Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
+      generateInputElements(components);
       
-      <div id="HM_IN08_4Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN08_4" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN08_4 (เก็บไว้เป็น default ของ IN08_4 ใน สศส.3)</span>
-      </div>
-  </div>
-
-<!-- HM34 : เงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิดจนถึงอายุ 6 ปี (พม.) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM34 : เงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิดจนถึงอายุ 6 ปี</b> (พม.)
-  </div>
+  </script>
   
-  <div class="input">
-      <select id="HM34" onchange="checkAndToggle('HM34', 'HM_IN08_5Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
-      
-      <div id="HM_IN08_5Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN08_5" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN08_5 (เก็บไว้เป็น default ของ IN08_5 ใน สศส.3)</span>
-      </div>
-  </div>
-
-<!-- HM35 : เงินสงเคราะห์บุตรแรกเกิดจนถึงอายุ 6 ปี (ประกันสังคม) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM35 : เงินสงเคราะห์บุตรแรกเกิดจนถึงอายุ 6 ปี</b> (ประกันสังคม)
-  </div>
-  
-  <div class="input">
-      <select id="HM35" onchange="checkAndToggle('HM35', 'HM_IN15Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
-      
-      <div id="HM_IN15Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN15" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN15 (เก็บไว้เป็น default ของ IN15 ใน สศส.3)</span>
-      </div>
-  </div>
-
-<!-- HM36 : โครงการช่วยเหลือของรัฐอื่น ๆ (เช่น โครงการเราเที่ยวด้วยกัน โครงการช่วยเหลือเกษตรกร ฯลฯ) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM36 : โครงการช่วยเหลือของรัฐอื่น ๆ</b> (เช่น โครงการเราเที่ยวด้วยกัน โครงการช่วยเหลือเกษตรกร ฯลฯ)
-  </div>
-  
-  <div class="input">
-      <select id="HM36" onchange="checkAndToggle('HM36', 'HM_IN08_6Div');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้รับ 1 ปี</option>
-          <option value="1">2 - ได้รับ 2 ปี</option>
-          <option value="1">3 - ได้รับ 3 ปี</option>
-          <option value="1">4 - ได้รับ 4 ปี</option>
-          <option value="1">5 - ได้รับ 5 ปี</option>
-          <option value="8">8 - ได้รับผลประโยชน์ในรอบ 12 เดือนแต่ปัจจุบันไม่ได้รับแล้ว</option>
-      </select>
-      
-      <div id="HM_IN08_6Div" style="display: none;" class="etc">
-          <br>จำนวนเงิน/มูลค่าที่ได้รับ :<br>
-          <input id="HM_IN08_6" type="number">
-      	  <br><br><span class="remark">บันทึกเป็นตัวแปร HM_IN08_6 (เก็บไว้เป็น default ของ IN08_6 ใน สศส.3)</span>
-      </div>
-  </div>
-</div>
+</div> <!-- HM29-36Div -->
 
 <!-------------------------------------------- HM38 - HM41 : ได้กู้ยืมเงินจากกองทุนต่าง ๆ (ต้องใช้คืน) ที่รัฐจัดให้ต่อไปนี้หรือไม่ -------------------------------------------->
 
 <div id="HM38-41Div">
+
   <div class="head0">
       <span style="font-size: 16px;">(ปัจจุบัน)</span><b> ได้กู้ยืมเงินจากกองทุนต่าง ๆ</b>
       <span style="font-size: 16px;">(ต้องใช้คืน)</span><b> ที่รัฐจัดให้ต่อไปนี้หรือไม่</b>
@@ -1004,73 +841,58 @@
   <div class="nn">
       คำว่า <b>“ปัจจุบัน”</b> หมายถึง การที่บุคคลยังมีหนี้สินที่ยังค้างชำระอยู่ของโครงการนั้น ๆ
   </div>
-
-<!-- HM38 : โครงการเงินกู้เพื่อการศึกษาของรัฐ -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM38 : โครงการเงินกู้เพื่อการศึกษาของรัฐ</b>
-  </div>
   
-  <div class="input">
-      <select id="HM38">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้</option>
-      </select>
-  </div>
+  <div id="container4"></div>
 
-<!-- HM39 : โครงการธนาคารประชาชนเพื่อผู้ประกอบอาชีพอิสระรายย่อย -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM39 : โครงการธนาคารประชาชนเพื่อผู้ประกอบอาชีพอิสระรายย่อย</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM39">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้</option>
-      </select>
-  </div>
+  <script>
+      var components = [
+          { item: '<b>โครงการเงินกู้เพื่อการศึกษาของรัฐ</b>', id: 'HM38' },
+          { item: '<b>โครงการธนาคารประชาชนเพื่อผู้ประกอบอาชีพอิสระรายย่อย</b>', id: 'HM39' },
+          { item: '<b>กองทุนหมู่บ้าน/กองทุนชุมชนเมือง</b>', id: 'HM40' },
+          { item: '<b>กองทุนอื่น ๆ</b> (ระบุ)', id: 'HM41' }
+      ];
 
-<!-- HM40 : กองทุนหมู่บ้าน/กองทุนชุมชนเมือง -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM40 : กองทุนหมู่บ้าน/กองทุนชุมชนเมือง</b>
-  </div>
-  
-  <div class="input">
-      <select id="HM40">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้</option>
-      </select>
-  </div>
+      function generateInputElements(components) {
+          var container = document.getElementById('container4');
+          var inputsHTML = '';
+          components.forEach(function(component) {
+              inputsHTML += `
+                    <div class="head">
+                        <span style="color: #ff0000;"><b>*</b></span>
+                        <b>${component.id} :</b> ${component.item}
+                    </div>
+                    <div class="frame">
+                        <select id="${component.id}">
+                            <option value="">-- กรุณาเลือก --</option>
+                            <option value="0">0 - ไม่ได้</option>
+                            <option value="1">1 - ได้</option>
+                        </select>
+                `;
+                if (component.id === 'HM41') {
+                    inputsHTML += `
+                        <div id="HM41T" style="display: none;">
+                            <input id="HM41_T" class="etc" type="text" placeholder="ระบุกองทุนที่กู้ยืม">
+                            <br><br><span class="remark">บันทึกเป็นตัวแปร HM41_T</span>
+                        </div>
+                    `;
+                }
+                inputsHTML += `
+                    </div>
+                `;
+            });
+          container.innerHTML = inputsHTML;
+      }
 
-<!-- HM41 : กองทุนอื่น ๆ (ระบุ) -->
-  <div class="head">
-      <span style="color: #ff0000;"><b>*</b></span>
-      <b>HM41 : กองทุนอื่น ๆ</b> (ระบุ)
-  </div>
-  
-  <div class="input">
-      <select id="HM41" onchange="Others('HM41');">
-          <option value="">-- กรุณาเลือก --</option>
-          <option value="0">0 - ไม่ได้</option>
-          <option value="1">1 - ได้</option>
-      </select>
+      generateInputElements(components);
       
-      <div id="HM41T" style="display: none;" class="etc">
-          <input type="text" placeholder = "ระบุกองทุนที่กู้ยืม">
-      	  <span class="remark">บันทึกเป็นตัวแปร HM41_T</span>
-      </div>
-  </div>
+  </script>
   
-</div>
+</div> <!-- HM38-41Div -->
 
 <!-------------------------------------------- HM42 - HM44 : อาชีพหลัก -------------------------------------------->
 
 <div id="HM42-44Div">
+
   <div class="head0">
       <b>อาชีพหลัก</b>
   </div>
@@ -1094,8 +916,8 @@
       อื่น ๆ เช่น เกษียณอายุ = 9996
   </div>
   
-  <div class="input">
-      <input id="HM42" type="text" placeholder="  พิมพ์รหัสและมีปุ่ม search">
+  <div class="frame">
+      <input id="HM42" type="text" placeholder=" Search คำหรือรหัสได้">
       <img src="https://icon-library.com/images/search-flat-icon/search-flat-icon-9.jpg" width="25" height="25" style="position: relative; left: 10px; top: 8px;">
       <br><br><span class="remark">If HM42 = 9991 → HM43 = 08 → <u>จบตอนที่ 1</u></span>
       <br><span class="remark">If HM42 = 9992 → HM43 = 09 → <u>จบตอนที่ 1</u></span>
@@ -1116,7 +938,7 @@
       ถ้าไม่ได้ทำงานหารายได้ ให้ "ปล่อยว่าง"
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM43">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - นายจ้าง</option>
@@ -1139,8 +961,8 @@
       ถ้าไม่ได้ทำงานหารายได้ ให้ "ปล่อยว่าง"
   </div>
   
-  <div class="input">
-      <input id="HM44" type="text" placeholder="  พิมพ์รหัสและมีปุ่ม search">
+  <div class="frame">
+      <input id="HM44" type="text" placeholder=" Search คำหรือรหัสได้">
       <img src="https://icon-library.com/images/search-flat-icon/search-flat-icon-9.jpg" width="25" height="25" style="position: relative; left: 10px; top: 8px;">
   </div> 
 
@@ -1149,11 +971,12 @@
       <b>HM_IN1 : รายได้จากการประกอบอาชีพหลัก</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <input id="HM_IN1" type="number">
       	  <br><br><span class="remark">เก็บไว้แสดงค่าใน สศส.3 (ปล่อย blank ได้)</span>
   </div>
-</div>
+  
+</div> <!-- HM42-44Div -->
 
 <!-------------------------------------------- HM45 - HM47 : อาชีพรอง -------------------------------------------->
 
@@ -1174,10 +997,10 @@
       <b>ไม่รวม</b>รหัส 9991-9996, 9999
   </div>
   
-  <div class="input">
-      <input id="HM45" type="text" placeholder="  พิมพ์รหัสและมีปุ่ม search">
+  <div class="frame">
+      <input id="HM45" type="text" placeholder=" Search คำหรือรหัสได้">
       <img src="https://icon-library.com/images/search-flat-icon/search-flat-icon-9.jpg" width="25" height="25" style="position: relative; left: 10px; top: 8px;">
-      <span class="remark" style="margin-left: 20px;">ไม่รวมรหัส 9991-9996, 9999</span>
+      <br><br><span class="remark">ไม่รวมรหัส 9991-9996, 9999</span>
   </div>
 
 <!-- HM46 : สถานภาพการทำงาน -->
@@ -1186,7 +1009,7 @@
       <b>HM46 : สถานภาพการทำงาน</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM46">
           <option value="">-- กรุณาเลือก --</option>
           <option value="1">1 - นายจ้าง</option>
@@ -1205,8 +1028,8 @@
       <b>HM47 : ประเภทอุตสาหกรรม</b>
   </div>
   
-  <div class="input">
-      <input id="HM47" type="text" placeholder="  พิมพ์รหัสและมีปุ่ม search">
+  <div class="frame">
+      <input id="HM47" type="text" placeholder=" Search คำหรือรหัสได้">
       <img src="https://icon-library.com/images/search-flat-icon/search-flat-icon-9.jpg" width="25" height="25" style="position: relative; left: 10px; top: 8px;">
   </div> 
 
@@ -1215,11 +1038,11 @@
       <b>HM_IN2 : รายได้จากการประกอบอาชีพรอง</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <input id="HM_IN2" type="number">
       	  <br><br><span class="remark">เก็บไว้แสดงค่าใน สศส.3 (ปล่อย blank ได้)</span>
   </div>
-</div>
+</div> <!-- HM45-47Div -->
 
 <!-- LST_MEN : เป็นสมาชิกคนสุดท้ายของครัวเรือนหรือไม่ -->
   <div class="head">
@@ -1227,8 +1050,8 @@
       <b>LST_MEN : เป็นสมาชิกคนสุดท้ายของครัวเรือนหรือไม่</b>
   </div>
   
-  <div class="input">
-      <select id="LST_MEN" onchange="checkAndToggle('LST_MEN', 'HM01_1Div');">
+  <div class="frame">
+      <select id="LST_MEN">
           <option value="">-- กรุณาเลือก --</option>
           <option value="0">0 - ไม่เป็น</option>
           <option value="1">1 - เป็น</option>
@@ -1244,7 +1067,7 @@
       <b>HM01_1: ลำดับที่ของผู้ตอบแบบสอบถาม</b>
   </div>
   
-  <div class="input">
+  <div class="frame">
       <select id="HM01_1">
           <option value="">-- กรุณาเลือก --</option>
           <option value="01">01 - ชื่อ-นามสกุล</option>
@@ -1252,8 +1075,8 @@
           <option value="...">...</option>
           <option value="n">n - ชื่อ-นามสกุล</option>
       </select>
-      <span class="remark">ถามเฉพาะสมาชิกคนสุดท้าย</span>
-      <br><br><span class="remark">แสดง (ชื่อ-นามสกุล) ให้เลือก แต่บันทึกค่าเป็นลำดับที่</span>
+      <br><br><span class="remark">- ถามเฉพาะสมาชิกคนสุดท้าย</span>
+      <br><span class="remark">- แสดง (ชื่อ-นามสกุล) ให้เลือก แต่บันทึกค่าเป็นลำดับที่</span>
       <br><span class="remark">* เพิ่มตัวเลือกบุคคลนอกครัวเรือน (รหัส 00)</span>
   </div>
 </div>
@@ -1318,10 +1141,13 @@ function Others(fieldId) {
 
     if (fieldId === "HM11") {
         var HM12Div = document.getElementById('HM12Div');
+        var HM13Div = document.getElementById('HM13Div');
         if (field.value === "1") {
             HM12Div.style.display = "none";
+            HM13Div.style.display = "none";
         } else {
             HM12Div.style.display = "block";
+            HM13Div.style.display = "block";
         }
     }
 }
@@ -1415,6 +1241,7 @@ window.onload = function() {
         var inputField = document.getElementById(id);
         inputField.addEventListener('input', function() {
         saveToLocalStorage();
+        allF();
         
         });
 
