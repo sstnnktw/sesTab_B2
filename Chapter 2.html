@@ -323,17 +323,40 @@
   <div class="frame">
       <select id="HH08">
           <option value="">-- ระบุจำนวน --</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
       </select>
+  	  <br><br><span class="remark">ตัวเลือกอ้างอิงจาก HH07 (ต้องน้อยกว่าหรือเท่ากับ HH07) เช่น</span>
+      <br><span class="remark">HH07 = 5 → ตัวเลือกของ HH08 : 5, 4, 3, 2, 1</span>
   </div>
+  
+<script>
+    
+	function updateHH08Options() {
+		var HH07Value = localStorage.getItem('HH07');
+
+		if (HH07Value !== null && !isNaN(parseInt(HH07Value))) {
+			var selectElement = document.getElementById('HH08');
+        	selectElement.innerHTML = '';
+
+        	var defaultOption = document.createElement('option');
+        	defaultOption.value = '';
+        	defaultOption.textContent = '-- ระบุจำนวน --';
+        	selectElement.appendChild(defaultOption);
+
+			for (var i = 0; i <= HH07Value; i++) {
+            	var option = document.createElement('option');
+            	option.value = i;
+            	option.textContent = i;
+            	selectElement.appendChild(option);
+        	}
+    	}
+	}
+
+document.getElementById('HH07').addEventListener('change', function() {
+    updateHH08Options();
+});
+
+updateHH08Options();
+</script>
   
 </div> <!-- HH07-08Div -->
 
@@ -708,26 +731,24 @@
   
   <div class="frame">
       <select id="HH42">
-          <option value="">-- ระบุจำนวน --</option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
       </select>
   </div>
   
+	<script>
+  	var selectElement = document.getElementById('HH42');
+	var defaultOption = document.createElement('option');
+	defaultOption.value = '';
+	defaultOption.textContent = '-- ระบุจำนวน --';
+	selectElement.appendChild(defaultOption);
+
+	for (var i = 0; i <= 15; i++) {
+    	var option = document.createElement('option');
+    	option.value = i;
+    	option.textContent = i;
+    	selectElement.appendChild(option);
+	}
+	</script>
+
 </div>
 
 <!-------------------------------------------- NOTE -------------------------------------------->
