@@ -46,16 +46,14 @@
     }
     table th, table td {
         border: 1px solid #f2f2f2;
-        padding: 10px;
+    	font-weight: normal;
         text-align: left;
+        padding: 10px;
     }
     table th {
-    	font-weight: normal;
         background-color: #DEC8EE;
         text-align: center;
         position: sticky;
-        /*top: 0;
-        z-index: 1;*/
     }
     thead {
         position: sticky;
@@ -92,6 +90,10 @@
     	background-color: #F7EEFC;
         text-align: right;
         padding: 20px;
+    }
+   #remark {
+        text-align: center;
+        color: #FF0000;
     }
    #nn {
         padding-left: 30px;
@@ -147,9 +149,9 @@
         padding-left: 60px;
     }
     .remark {
+        text-align:left;
         color: #FF0000;
         font-size: 15px;
-        padding-left: 5px;
     }
     .note {    
         font-size: 18px;
@@ -199,8 +201,11 @@
 
 <div class="chapter">
     <b>ตอนที่ 3 ค่าใช้จ่ายสินค้าและบริการ</b>
-    <br><span class="remark">- ข้อไหนไม่มีค่าใช้จ่ายสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u></span>    
-    <br><span class="remark">- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</span>
+    <div class="remark">
+    	** remark **
+        <br>- ข้อไหนไม่มีค่าใช้จ่ายสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u>    
+        <br>- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก
+    </div>
 </div>
 
 <div class="nn">
@@ -254,7 +259,7 @@
         
         <tr>
             <td colspan="3"></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
 		</tr>  
        
         <script>
@@ -495,7 +500,7 @@
         
         <tr>
             <td colspan="3"></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
 		</tr>  
         
         <tr>
@@ -595,7 +600,7 @@
         
         <tr>
             <td colspan="3"></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
 		</tr>  
         
         <tr>
@@ -744,7 +749,7 @@
         
         <tr>
             <td colspan="3"></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
 		</tr>  
         
         <tr>
@@ -754,7 +759,6 @@
                 	   class="price"
                        id="EG79AY"
                        placeholder="EG79AY"
-                       oninput="CalMonthly('EG79AY', 'EG79A');"
                 >
             </td>
             
@@ -763,7 +767,6 @@
                 	   class="price"
                        id="EG79BCY"
                        placeholder="EG79BCY"
-                       oninput="CalMonthly('EG79BCY', 'EG79BC');"
                 >
             </td>
             
@@ -1037,7 +1040,7 @@
         
         <tr>
             <td colspan="3"></td>
-            <td colspan="2" style="text-align: center;"><span class="remark">โปรแกรมคำนวณให้</span></td>
+            <td colspan="2" id="remark">โปรแกรมคำนวณให้</td>
 		</tr>  
 
         <tr>
@@ -1068,7 +1071,6 @@
                             	   class="price"
                                    id="${ValueA}"
                                    placeholder="${ValueA}"
-                                   oninput="updateSum('EG86_1A','EG86_2A', 'EG86A');"
                             >
                         </td>
                         
@@ -1077,7 +1079,6 @@
                             	   class="price"
                                    id="${ValueB}"
                                    placeholder="${ValueB}"
-                                   oninput="updateSum('EG86_1BC','EG86_2BC', 'EG86BC');"
                             >
                         </td>
                     `;
