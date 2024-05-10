@@ -301,7 +301,7 @@
 </div>
   
 <div class="frame">
-	<input id="IN08_2" type="number" placeholder="default = HM_IN08_2 (ตอนที่ 1)">
+	<input id="IN08_2" type="number">
     <br><br><span class="remark">default = HM_IN08_2 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
@@ -311,7 +311,7 @@
 </div>
   
 <div class="frame">
-	<input id="IN08_3" type="number" placeholder="default = HM_IN08_3 (ตอนที่ 1)">
+	<input id="IN08_3" type="number">
     <br><br><span class="remark">default = HM_IN08_3 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
@@ -321,7 +321,7 @@
 </div>
   
 <div class="frame">
-	<input id="IN08_4" type="number" placeholder="default = HM_IN08_4 (ตอนที่ 1)">
+	<input id="IN08_4" type="number">
     <br><br><span class="remark">default = HM_IN08_4 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
@@ -331,7 +331,7 @@
 </div>
   
 <div class="frame">
-	<input id="IN08_5" type="number" placeholder="default = HM_IN08_5 (ตอนที่ 1)">
+	<input id="IN08_5" type="number">
     <br><br><span class="remark">default = HM_IN08_5 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
@@ -341,7 +341,7 @@
 </div>
   
 <div class="frame">
-	<input id="IN08_6" type="number" placeholder="default = HM_IN08_6 (ตอนที่ 1)">
+	<input id="IN08_6" type="number">
     <br><br><span class="remark">default = HM_IN08_6 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
@@ -350,7 +350,8 @@
 </div>
   
 <div class="frame">
-	<input id="IN08" type="number" style="background-color: #EEEEEE; color: #BFBFBF;" readonly placeholder=" ∑(IN08_1 → IN08_6)">
+	<input id="IN08" type="number" style="background-color: #EEEEEE; color: #BFBFBF;" readonly>
+    <br><br><span class="remark">∑(IN08_1 → IN08_6)</span>
 </div>
 
 <!------------ IN09 : เงินทุนการศึกษา (รวม ทุนการศึกษาจากเงินของโรงเรียน) ------------>
@@ -363,7 +364,7 @@
 </div>
   
 <div class="frame">
-	<input id="IN09" type="number" placeholder="default = HM_IN09 (ตอนที่ 1)">
+	<input id="IN09" type="number">
     <br><br><span class="remark">default = HM_IN09 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
@@ -426,7 +427,7 @@
 </div>
   
 <div class="frame">
-	<input id="IN15" type="number" placeholder="default = HM_IN15 (ตอนที่ 1)">
+	<input id="IN15" type="number">
     <br><br><span class="remark">default = HM_IN15 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
@@ -450,7 +451,7 @@
 
 <div class="frame">
 	<input id="INC" type="number" class="inputT" readonly placeholder=" ∑(IN02 → IN16)">
-    <br><br><span class="remark">บันทึกเป็นตัวแปร INC</span>
+    <br><span class="remark">บันทึกเป็นตัวแปร INC</span>
 </div>
 
 
@@ -693,7 +694,7 @@ function setLocalStorageValues() {
     	document.getElementById('IN08_6').value = HM_IN08_6D;
 	}
     if (!document.getElementById('IN09').value) {
-    	document.getElementById('IN09').value = IN09D;
+    	document.getElementById('IN09').value = HM_IN09D;
 	}
     if (!document.getElementById('IN15').value) {
     	document.getElementById('IN15').value = HM_IN15D;
