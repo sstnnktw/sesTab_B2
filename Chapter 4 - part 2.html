@@ -1900,7 +1900,7 @@ function calculateValues() {
             if (S === 1) {
                 var A_result = C / ((PM * 4.3) + PW + (PD / 7));
                 if (!isNaN(A_result)) {
-                    A.value = A_result.toFixed(0);
+                    A.value = Math.round(A_result);
                 } else {
                     A.value = '';
                 }
@@ -1910,7 +1910,7 @@ function calculateValues() {
             } else if (S === 2) {
                 var B_result = C / ((PM * 4.3) + PW + (PD / 7));
                 if (!isNaN(B_result)) {
-                    B.value = B_result.toFixed(0);
+                    B.value = Math.round(B_result);
                 } else {
                     B.value = '';
                 }
@@ -1942,7 +1942,7 @@ function calculateValues() {
             if (S === 1) {
                 var A_result = C / ((PM * 4.3) + PW + (PD / 7));
                 if (!isNaN(A_result)) {
-                    A.value = A_result.toFixed(0);
+                    A.value = Math.round(A_result);
                 } else {
                     A.value = '';
                 }
@@ -1952,7 +1952,7 @@ function calculateValues() {
             } else if (S === 2) {
                 var B_result = C / ((PM * 4.3) + PW + (PD / 7));
                 if (!isNaN(B_result)) {
-                    B.value = B_result.toFixed(0);
+                    B.value = Math.round(B_result);
                 } else {
                     B.value = '';
                 }
@@ -1978,7 +1978,7 @@ function calculateValues() {
         if (S === 1) {
             var A_result = C / ((PM * 4.3) + PW + (PD / 7));
             if (!isNaN(A_result)) {
-                A.value = A_result.toFixed(0);
+                A.value = Math.round(A_result);
             } else {
                 A.value = '';
             }
@@ -1988,7 +1988,7 @@ function calculateValues() {
         } else if (S === 2) {
             var B_result = C / ((PM * 4.3) + PW + (PD / 7));
             if (!isNaN(B_result)) {
-                B.value = B_result.toFixed(0);
+                B.value = Math.round(B_result);
             } else {
                 B.value = '';
             }
