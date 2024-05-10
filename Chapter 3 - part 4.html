@@ -719,7 +719,7 @@
 function CalMonthly(inputId, outputId) {
     var inputValue = parseInt(document.getElementById(inputId).value);
     if (!isNaN(inputValue)) {
-        document.getElementById(outputId).value = (inputValue / 12).toFixed(0);
+        document.getElementById(outputId).value = Math.round((inputValue / 12));
     } else {
         document.getElementById(outputId).value = "";
     }
