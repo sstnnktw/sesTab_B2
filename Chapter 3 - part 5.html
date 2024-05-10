@@ -215,7 +215,8 @@
 <div class="chapter">
     <b>ตอนที่ 3 ค่าใช้จ่ายสินค้าและบริการ</b>
     <div class="remark">
-    	** remark **
+        <u>remark</u>
+        <br><b>** ถามเฉพาะหัวหน้าครัวเรือน **</b>
     	<br>- ข้อไหนไม่มีค่าใช้จ่ายสามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u>
     	<br>- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก
     </div>
@@ -533,7 +534,7 @@
 function CalMonthly(inputId, outputId) {
     var inputValue = parseFloat(document.getElementById(inputId).value);
     if (!isNaN(inputValue)) {
-        document.getElementById(outputId).value = (inputValue / 12).toFixed(0);
+        document.getElementById(outputId).value = Math.round((inputValue / 12));
     } else {
         document.getElementById(outputId).value = "";
     }
