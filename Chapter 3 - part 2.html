@@ -1036,8 +1036,8 @@
 
 function CalMonthly(yearlyId, monthlyId) {
     var yearlyValue = parseInt(document.getElementById(yearlyId).value);
-    var monthlyAverage = yearlyValue / 12;
-    document.getElementById(monthlyId).value = monthlyAverage.toFixed(0);
+    var monthlyAverage = Math.round(yearlyValue / 12);
+    document.getElementById(monthlyId).value = monthlyAverage;
 }
 
 function allMonthly() {
