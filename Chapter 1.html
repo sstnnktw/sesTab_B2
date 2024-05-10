@@ -1143,7 +1143,7 @@ function Others(fieldId) {
     if (fieldId === "HM11") {
         var HM12Div = document.getElementById('HM12Div');
         var HM13Div = document.getElementById('HM13Div');
-        if (field.value === "1") {
+        if (field.value === "1"|| field.value === "") {
             HM12Div.style.display = "none";
             HM13Div.style.display = "none";
         } else {
