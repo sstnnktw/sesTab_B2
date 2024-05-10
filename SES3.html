@@ -54,36 +54,35 @@
     padding-left: 60px;
     font-size: 16px;
   }
-  .inputT {
+  
+/*---------------------------------*/
+
+  .frame {
+    padding-left: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  select {
+    font-size: 16px;
+    height: 35px;
+    width: 250px;
+  }
+  input {
+    font-size: 16px;
+    height: 35px;
+    width: 250px;
+  }
+  input.etc {
+    margin-top: 15px;
+  }
+  input.inputT {
     background-color: #EBD5F7;
     font-size: 16px;
     margin-bottom: 20px;
   }
-  .inputT input {
-    font-size: 16px;
-  }
-  .input {
-    padding-left: 60px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    font-size: 16px;
-  }
-  .input select {
-    font-size: 16px;
-    height: 35px;
-    width: 250px;
-  }
-  .input input {
-    font-size: 16px;
-    height: 35px;
-    width: 250px;
-  }
-  .etc input{
-    font-size: 16px;
-    height: 35px;
-    width: 250px;
-    margin-top: 15px;
-  }
+  
+/*---------------------------------*/
+
   .nn {
   	background-color: #FFF9E7;
     font-size: 15px;
@@ -91,11 +90,11 @@
     padding-left: 20px;
   } 
   .remark {
-  	color: #FF0000;
-  	font-size: 15px;
-  	padding-left: 5px;
-  	margin-bottom: 50px;
-  } 
+    color: #FF0000;
+    font-size: 15px;
+    padding-left: 5px;
+    text-align: left;
+  }
   .container {
   	display: flex;
   	flex-wrap: wrap;
@@ -158,32 +157,37 @@
     <b>สศส. 3</b><br>
     <b>สรุปรายได้
     <span style="font-size: 18px;">(ในรอบ 12 เดือนที่แล้ว)</span></b>
-    <br><span class="remark">ข้อไหนไม่มีรายได้สามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u></span>
+    <div class="remark">
+    	<u>remark</u>
+        <br><b>** ถามสมาชิกทุกคน **</b>
+    	<br>- ข้อไหนไม่มีรายได้สามารถปล่อย blank ได้ <u>แต่หลังบ้านบันทึกค่าเป็น 0</u>
+    </div>
 </div>
 
 <!--------------------------------------------- HM --------------------------------------------->
 
 <div class="nn">
-	<b>ลำดับที่ : xx</b> <span class="remark">(ดึง HM01 จากตอนที่ 1 มาแสดง)</span>
+<div class="remark">** ดึง ข้อมูลจากตอนที่ 1 มาแสดง</div>
+	<b>ลำดับที่ : xx</b> <span class="remark">(HM01)</span>
 	<br><b>ชื่อ - นามสกุล : </b><span id="HM01N1"></span> <span id="HM01N2"></span> <span id="HM01N3"></span>
-    <span class="remark">(ดึง HM01N1 - HM01N3 จากตอนที่ 1 มาแสดง)</span>
+    <span class="remark">(HM01N1 - HM01N3)</span>
 	<div class="container">
 
         <div class="column">
             <div class="id">
-                <b>อาชีพหลัก :</b> <span id="HM42"></span><span class="remark">(ดึง HM42 จากตอนที่ 1 มาแสดง)</span>
-                <br><b>สถานภาพการทำงาน :</b> <span id="HM43"></span><span class="remark">(ดึง HM43 จากตอนที่ 1 มาแสดง)</span>
-                <br><b>อุตสาหกรรม :</b> <span id="HM44"></span><span class="remark">(ดึง HM44 จากตอนที่ 1 มาแสดง)</span>
-                <br><b>รายได้จากอาชีพหลัก :</b> <span id="HM_IN1"></span><span class="remark">(ดึง HM_IN1 จากตอนที่ 1 มาแสดง)</span>
+                <b>อาชีพหลัก :</b> <span id="HM42"></span><span class="remark">(HM42)</span>
+                <br><b>สถานภาพการทำงาน :</b> <span id="HM43"></span><span class="remark">(HM43)</span>
+                <br><b>อุตสาหกรรม :</b> <span id="HM44"></span><span class="remark">(HM44)</span>
+                <br><b>รายได้จากอาชีพหลัก :</b> <span id="HM_IN1"></span><span class="remark">(HM_IN1)</span>
             </div>
         </div>
 
         <div class="column">
             <div class="id">
-                <b>อาชีพรอง :</b> <span id="HM45"></span><span class="remark">(ดึง HM45 จากตอนที่ 1 มาแสดง)</span>
-                <br><b>สถานภาพการทำงาน :</b> <span id="HM46"></span><span class="remark">(ดึง HM46 จากตอนที่ 1 มาแสดง)</span>
-                <br><b>อุตสาหกรรม :</b> <span id="HM47"></span><span class="remark">(ดึง HM47 จากตอนที่ 1 มาแสดง)</span>
-                <br><b>รายได้จากอาชีพรอง :</b> <span id="HM_IN2"></span><span class="remark">(ดึง HM_IN2 จากตอนที่ 1 มาแสดง)</span>
+                <b>อาชีพรอง :</b> <span id="HM45"></span><span class="remark">(HM45)</span>
+                <br><b>สถานภาพการทำงาน :</b> <span id="HM46"></span><span class="remark">(HM46)</span>
+                <br><b>อุตสาหกรรม :</b> <span id="HM47"></span><span class="remark">(HM47)</span>
+                <br><b>รายได้จากอาชีพรอง :</b> <span id="HM_IN2"></span><span class="remark">(HM_IN2)</span>
             </div>
         </div>
     
@@ -205,8 +209,8 @@
 	(<b>รวม</b> ค่าล่วงเวลา โบนัส ค่าทิป ค่าเปอร์เซ็นต์การขายสินค้าหรือบริการ ค่าครองชีพ ค่าช่วยเหลือบุตรและอื่น ๆ)
 </div>
   
-<div class="input">
-	<input id="IN02" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN02" type="number">
 </div>
 
 <!------------ IN03 : ธุรกิจ ------------>
@@ -218,8 +222,8 @@
 	(หักค่าใช้จ่ายในการดำเนินการ)
 </div>
   
-<div class="input">
-	<input id="IN03" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN03" type="number">
 </div>
 
 <!------------ IN04 : เกษตร ------------>
@@ -231,8 +235,8 @@
 	(หักค่าใช้จ่ายในการดำเนินการ)
 </div>
   
-<div class="input">
-	<input id="IN04" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN04" type="number">
 </div>
 
 <!-------------------------------------------- IN05-16 : รายได้จากแหล่งอื่น ๆ ที่ไม่ใช่จากการทำงาน -------------------------------------------->
@@ -250,8 +254,8 @@
 	(<b>รวม</b> เงินบำนาญ/บำเหน็จ จากกองทุนประกันสังคม)
 </div>
   
-<div class="input">
-	<input id="IN05" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN05" type="number">
 </div>
 
 <!------------ IN06 : เงินชดเชยและ/หรือเงินทดแทนจากการออกจากงาน ------------>
@@ -259,8 +263,8 @@
 	<b>IN06 : เงินชดเชยและ/หรือเงินทดแทนจากการออกจากงาน</b>
 </div>
   
-<div class="input">
-	<input id="IN06" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN06" type="number">
 </div>
 
 <!------------ IN07 : เงินช่วยเหลือ/สิ่งของที่ได้รับจากบุคคลอื่นนอกครัวเรือน ------------>
@@ -272,8 +276,8 @@
 	(<b>รวม</b> เงินจากญาติ/ไม่ใช่ญาติ ที่อยู่นอกครัวเรือน)
 </div>
   
-<div class="input">
-	<input id="IN07" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN07" type="number">
 </div>
 
 <!------------ IN08 : เงินสงเคราะห์ผู้สูงอายุ  และผู้พิการ  รวมทั้งความช่วยเหลืออื่น ๆ  จากรัฐและองค์การต่าง ๆ ------------>
@@ -286,9 +290,9 @@
 	<b>IN08_1 : เงินสงเคราะห์เพื่อการยังชีพสำหรับผู้สูงอายุ</b>
 </div>
   
-<div class="input">
-	<input id="IN08_1" type="number" min="00" max="99999" placeholder="default = HM_IN08_1 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN08_1 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN08_1" type="number" placeholder="default = HM_IN08_1 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN08_1 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <!----- IN08_2 : เงินสงเคราะห์สำหรับผู้พิการ ----->
@@ -296,9 +300,9 @@
 	<b>IN08_2 : เงินสงเคราะห์สำหรับผู้พิการ</b>
 </div>
   
-<div class="input">
-	<input id="IN08_2" type="number" min="00" max="99999" placeholder="default = HM_IN08_2 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN08_2 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN08_2" type="number" placeholder="default = HM_IN08_2 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN08_2 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <!----- IN08_3 : อาหารกลางวัน/อาหารเสริมฟรี (นม) สำหรับนักเรียน ----->
@@ -306,9 +310,9 @@
 	<b>IN08_3 : อาหารกลางวัน/อาหารเสริมฟรี (นม) สำหรับนักเรียน</b>
 </div>
   
-<div class="input">
-	<input id="IN08_3" type="number" min="00" max="99999" placeholder="default = HM_IN08_3 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN08_3 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN08_3" type="number" placeholder="default = HM_IN08_3 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN08_3 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <!----- IN08_4 : การใช้จ่ายผ่านบัตรสวัสดิการแห่งรัฐ (ผู้มีรายได้น้อย) ----->
@@ -316,9 +320,9 @@
 	<b>IN08_4 : การใช้จ่ายผ่านบัตรสวัสดิการแห่งรัฐ (ผู้มีรายได้น้อย)</b>
 </div>
   
-<div class="input">
-	<input id="IN08_4" type="number" min="00" max="99999" placeholder="default = HM_IN08_4 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN08_4 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN08_4" type="number" placeholder="default = HM_IN08_4 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN08_4 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <!----- IN08_5 : เงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิดจนถึงอายุ 6 ปี (พม.) ----->
@@ -326,9 +330,9 @@
 	<b>IN08_5 : เงินอุดหนุนเพื่อการเลี้ยงดูเด็กแรกเกิดจนถึงอายุ 6 ปี (พม.)</b>
 </div>
   
-<div class="input">
-	<input id="IN08_5" type="number" min="00" max="99999" placeholder="default = HM_IN08_5 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN08_5 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN08_5" type="number" placeholder="default = HM_IN08_5 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN08_5 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <!----- IN08_6 : การช่วยเหลืออื่น ๆ จากรัฐและองค์กรต่าง ๆ ----->
@@ -336,16 +340,16 @@
 	<b>IN08_6 : การช่วยเหลืออื่น ๆ จากรัฐและองค์กรต่าง ๆ</b>
 </div>
   
-<div class="input">
-	<input id="IN08_6" type="number" min="00" max="99999" placeholder="default = HM_IN08_6 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN08_6 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN08_6" type="number" placeholder="default = HM_IN08_6 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN08_6 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <div class="head3">
 	<b>รวมทั้งสิ้น</b>
 </div>
   
-<div class="input">
+<div class="frame">
 	<input id="IN08" type="number" style="background-color: #EEEEEE; color: #BFBFBF;" readonly placeholder=" ∑(IN08_1 → IN08_6)">
 </div>
 
@@ -358,9 +362,9 @@
 	(<b>รวม</b> ทุนการศึกษาจากเงินของโรงเรียน)
 </div>
   
-<div class="input">
-	<input id="IN09" type="number" min="00" max="99999" placeholder="default = HM_IN09 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN09 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN09" type="number" placeholder="default = HM_IN09 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN09 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <!------------ IN10 : รายรับจากการให้เช่าห้อง/เช่าที่ดิน  และสินทรัพย์อื่น ๆ (โดยไม่ได้ประกอบเป็นธุรกิจ) ------------>
@@ -368,8 +372,8 @@
 	<b>IN10 : รายรับจากการให้เช่าห้อง/เช่าที่ดิน  และสินทรัพย์อื่น ๆ (โดยไม่ได้ประกอบเป็นธุรกิจ)</b>
 </div>
   
-<div class="input">
-	<input id="IN10" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN10" type="number">
 </div>
 
 <!------------ IN11 : ค่าลิขสิทธิ์และสิทธิบัตรต่าง ๆ ------------>
@@ -377,8 +381,8 @@
 	<b>IN11 : ค่าลิขสิทธิ์และสิทธิบัตรต่าง ๆ</b>
 </div>
   
-<div class="input">
-	<input id="IN11" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN11" type="number">
 </div>
 
 <!------------ IN12 : ดอกเบี้ย/ผลตอบแทนจากเงินฝาก  พันธบัตร  เงินปันผลจากหุ้นและการลงทุนอื่น ๆ ------------>
@@ -386,8 +390,8 @@
 	<b>IN12 : ดอกเบี้ย/ผลตอบแทนจากเงินฝาก  พันธบัตร  เงินปันผลจากหุ้นและการลงทุนอื่น ๆ</b>
 </div>
   
-<div class="input">
-	<input id="IN12" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN12" type="number">
 </div>
 
 <!------------ IN13 : ดอกเบี้ย/ผลตอบแทนจากแชร์  และการให้กู้ยืมเงินแก่บุคคลอื่น/เอกชน ------------>
@@ -395,8 +399,8 @@
 	<b>IN13 : ดอกเบี้ย/ผลตอบแทนจากแชร์  และการให้กู้ยืมเงินแก่บุคคลอื่น/เอกชน</b>
 </div>
   
-<div class="input">
-	<input id="IN13" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN13" type="number">
 </div>
 
 <!------------ IN14 : มรดก  พินัยกรรม  ของขวัญ เงินซอง (ไม่รวม ทรัพย์สิน) ------------>
@@ -408,8 +412,8 @@
 	(<b>ไม่รวม</b> ทรัพย์สิน)
 </div>
   
-<div class="input">
-	<input id="IN14" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN14" type="number">
 </div>
 
 <!------------ IN15 : เงินได้รับจากการประกันสุขภาพ  อุบัติเหตุ  ไฟไหม้  ประกันชีวิต เงินฌาปนกิจศพ เงินได้จากประกันสังคม (ที่ไม่ใช่ประเภทสะสมทรัพย์) ทุกประเภท ------------>
@@ -421,9 +425,9 @@
 	(<b>รวม</b> เงินสงเคราะห์บุตรแรกเกิดจนถึงอายุ 6 ปี (ประกันสังคม)
 </div>
   
-<div class="input">
-	<input id="IN15" type="number" min="00" max="99999" placeholder="default = HM_IN15 (ตอนที่ 1)">
-      <span class="remark">default = HM_IN15 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
+<div class="frame">
+	<input id="IN15" type="number" placeholder="default = HM_IN15 (ตอนที่ 1)">
+    <br><br><span class="remark">default = HM_IN15 (ตอนที่ 1) ถ้าไม่มีเป็น blank</span>
 </div>
 
 <!------------ IN16 : รายได้อื่น ๆ ------------>
@@ -435,8 +439,8 @@
 	<b>เช่น</b> เงินถูกสลากกินแบ่งของรัฐ  เงินรางวัล  ค่านายหน้า (โดยไม่ได้ประกอบเป็นธุรกิจ) เงินได้จากการพนัน
 </div>
   
-<div class="input">
-	<input id="IN16" type="number" min="00" max="99999">
+<div class="frame">
+	<input id="IN16" type="number">
 </div>
 
 <!-------------------------------------------- รวม -------------------------------------------->
@@ -444,9 +448,9 @@
 	<b>รวมรายได้ทั้งสิ้น</b>
 </div>
 
-<div class="input">
+<div class="frame">
 	<input id="INC" type="number" class="inputT" readonly placeholder=" ∑(IN02 → IN16)">
-      <span class="remark">บันทึกเป็นตัวแปร INC</span>
+    <br><br><span class="remark">บันทึกเป็นตัวแปร INC</span>
 </div>
 
 
