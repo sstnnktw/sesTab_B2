@@ -18,10 +18,6 @@
     text-align:center;
     font-size: 24px;
   }
-  .frame {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
   .chapter {
     background-color: #edecf3;
     padding: 20px;
@@ -46,12 +42,16 @@
     padding-left: 20px;
     font-size: 16px;
   }
-  .input {
+  
+/*---------------------------------*/
+
+  .frame {
     padding-left: 60px;
-    font-size: 16px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
-  .input input {
-    border: 0.5px solid #000; /* Adjusted border thickness */
+  input {
+    border: 0.5px solid #000; 
     background-color: #EEEEEE;
     color: #BFBFBF;
     font-size: 16px;
@@ -65,11 +65,11 @@
     padding-left: 20px;
   } 
   .remark {
-  	color: #FF0000;
-  	font-size: 15px;
-  	padding-left: 5px;
-  	margin-bottom: 50px;
-  } 
+    color: #FF0000;
+    font-size: 15px;
+    padding-left: 5px;
+    text-align: left;
+  }
   .container {
   	display: flex;
   	flex-wrap: wrap;
@@ -120,8 +120,11 @@
 
 <div class="chapter">
     <b>สรุปข้อมูลครัวเรือน</b>
-    <br><span class="remark">- รายละเอียดการคำนวณตัวแปรตาม <u>Data Dict</u></span>
-    <br><span class="remark">- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก</span>
+    <div class="remark">
+    	<u>remark</u>
+    	<br>- รายละเอียดการคำนวณตัวแปรตาม <u>Data Dict</u>
+    	<br>- กำหนดค่า default ใน box ให้เป็นชื่อตัวแปรเพื่อความเข้าใจเท่านั้น หน้าโปรแกรมจริงให้เอาออก
+    </div>
 </div>
 
 <!-------------------------------------------- ค่าใช้จ่าย -------------------------------------------->
@@ -136,10 +139,8 @@
 </div>
 
 <div class="frame">
-<div class="input">
 	<input id="EXPEND" type="number" readonly placeholder=" EXPEND">
-    <span class="remark">CON + NCON + FBTP</span>
-</div>
+    <br><br><span class="remark">CON + NCON + FBTP</span>
 </div><!-- frame -->
     
 
@@ -148,10 +149,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON" type="number" readonly placeholder=" CON">
-    <span class="remark">จาก part 3</span>
-</div>
+    <br><br><span class="remark">จาก part 3.4</span>
 </div><!-- frame -->
 
     
@@ -160,10 +159,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON1" type="number" readonly placeholder=" CON1">
-    <span class="remark">∑(EG01A → EG05A) + ∑(EG01BC → EG05BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG01A → EG05A) + ∑(EG01BC → EG05BC)</span>
 </div><!-- frame -->
 
 
@@ -172,10 +169,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON2" type="number" readonly placeholder=" CON2">
-    <span class="remark">∑(EG06A → EG27A) + ∑(EG06BC → EG27BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG06A → EG27A) + ∑(EG06BC → EG27BC)</span>
 </div><!-- frame -->
 
 
@@ -184,10 +179,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON3" type="number" readonly placeholder=" CON3">
-    <span class="remark">∑(EG28A → EG29A) + ∑(EG28BC → EG29BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG28A → EG29A) + ∑(EG28BC → EG29BC)</span>
 </div><!-- frame -->
 
 
@@ -196,10 +189,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON4" type="number" readonly placeholder=" CON4">
-    <span class="remark">∑(EG30A → EG35A) + ∑(EG30BC → EG35BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG30A → EG35A) + ∑(EG30BC → EG35BC)</span>
 </div><!-- frame -->
 
 
@@ -208,10 +199,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON5" type="number" readonly placeholder=" CON5">
-    <span class="remark">∑(EG36A → EG38A) + ∑(EG36BC → EG38BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG36A → EG38A) + ∑(EG36BC → EG38BC)</span>
 </div><!-- frame -->
 
 
@@ -220,10 +209,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON6" type="number" readonly placeholder=" CON6">
-    <span class="remark">∑(EG39A → EG46A) + ∑(EG39BC → EG46BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG39A → EG46A) + ∑(EG39BC → EG46BC)</span>
 </div><!-- frame -->
 
 
@@ -232,10 +219,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON7" type="number" readonly placeholder=" CON7">
-    <span class="remark">∑(EG47A → EG60A) + ∑(EG47BC → EG60BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG47A → EG60A) + ∑(EG47BC → EG60BC)</span>
 </div><!-- frame -->
 
 
@@ -244,10 +229,9 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON8" type="number" readonly placeholder=" CON8">
-    <br><br><span class="remark">∑(EG61A → EG87A, EG781A, EG782A, EG791A) + ∑(EG61BC → EG87BC, EG781BC, EG782BC, EG791BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG61A → EG87A, EG781A, EG782A, EG791A)
+    <br>+ ∑(EG61BC → EG87BC, EG781BC, EG782BC, EG791BC)</span>
 </div><!-- frame -->
 
 
@@ -256,10 +240,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON9" type="number" readonly placeholder=" CON9">
-    <span class="remark">∑(EG88A → EG92A) + ∑(EG88BC → EG92BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG88A → EG92A) + ∑(EG88BC → EG92BC)</span>
 </div><!-- frame -->
 
 
@@ -268,10 +250,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON10" type="number" readonly placeholder=" CON10">
-    <span class="remark">∑(EG93A → EG110A) + ∑(EG93BC → EG110BC)</span>
-</div>
+    <br><br><span class="remark">∑(EG93A → EG110A) + ∑(EG93BC → EG110BC)</span>
 </div><!-- frame -->
 
 
@@ -280,10 +260,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="CON11" type="number" readonly placeholder=" CON11">
-    <span class="remark">EG111A + EG111BC</span>
-</div>
+    <br><br><span class="remark">EG111A + EG111BC</span>
 </div><!-- frame -->
     
 
@@ -292,10 +270,8 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="NCON" type="number" readonly placeholder=" NCON">
-    <span class="remark">จาก part 3</span>
-</div>
+    <br><br><span class="remark">จาก part 3.5</span>
 </div><!-- frame -->
 
 
@@ -304,11 +280,12 @@
 </div>
   
 <div class="frame">
-<div class="input">
 	<input id="FBTP"type="number" readonly placeholder=" FBTP">
-    <span class="remark">FBTP = FBTP_A + FBTP_BC</span><br>
-    <span class="remark">FBTP_A = EF_A * 4.3, FBTP_BC = EF_BC * 4.3</span>
-</div>
+    <div class="remark">
+    	<br>FBTP = FBTP_A + FBTP_BC ;
+    	<br>FBTP_A = EF_A * 4.3,
+    	<br>FBTP_BC = EF_BC * 4.3
+    </div>
 </div><!-- frame -->
 
 <!-------------------------------------------- รายได้ -------------------------------------------->
@@ -323,9 +300,11 @@
 </div>
 
 <div class="frame">
-<div class="input">
 	<input id="INCOME" type="number" readonly placeholder=" INCOME">
-</div>
+    <div class="remark">
+    	<br>ผลรวม INCOME ของสมาชิกทุกคน ;
+    	<br>INCOM = INC/12
+    </div>
 </div><!-- frame -->
     
 
@@ -336,6 +315,10 @@
 <div class="frame">
 <div class="input">
 	<input id="INC1" type="number" readonly placeholder=" INC1">
+    <div class="remark">
+    	<br>ผลรวม INC1 ของสมาชิกทุกคน ;
+    	<br>INC1 = IN02/12
+    </div>
 </div>
 </div><!-- frame -->
     
@@ -347,6 +330,10 @@
 <div class="frame">
 <div class="input">
 	<input id="INC2" type="number" readonly placeholder=" INC2">
+    <div class="remark">
+    	<br>ผลรวม INC2 ของสมาชิกทุกคน ;
+    	<br>INC2 = IN03/12
+    </div>
 </div>
 </div><!-- frame -->
     
@@ -358,6 +345,10 @@
 <div class="frame">
 <div class="input">
 	<input id="INC3" type="number" readonly placeholder=" INC3">
+    <div class="remark">
+    	<br>ผลรวม INC3 ของสมาชิกทุกคน ;
+    	<br>INC3 = IN04/12
+    </div>
 </div>
 </div><!-- frame -->
     
@@ -369,6 +360,10 @@
 <div class="frame">
 <div class="input">
 	<input id="INC4" type="number" readonly placeholder=" INC4">
+    <div class="remark">
+    	<br>ผลรวม INC4 ของสมาชิกทุกคน ;
+    	<br>INC4 = ∑(IN05 → IN16)/12
+    </div>
 </div>
 </div><!-- frame -->
 
@@ -602,7 +597,7 @@ function resetLocalStorage() {
     for (var i = 5; i <= 16; i++) {
         INC4D += parseInt(localStorage.getItem("IN" + i.toString().padStart(2, '0'))) || 0;
     }
-    var INC4 = (INC4D / 12).toFixed(0);
+    var INC4 = Math.round((INC4D / 12));
     if (INC4 === '0') {
         INC4 = '';
 	}
